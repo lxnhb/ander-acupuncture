@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog | Ander Acupuncture and Herbs</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ── BLOG GRID ── */
+    .blog-section { background: var(--cream); }
+    .blog-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    /* Featured article */
+    .article-featured {
+      background: var(--white);
+      border-radius: 2px;
+      overflow: hidden;
+      margin-bottom: 32px;
+    }
+    .article-featured img {
+      width: 100%;
+      aspect-ratio: 16/8;
+      object-fit: cover;
+    }
+    .article-featured .art-body { padding: 32px; }
+    .article-tag {
+      display: inline-block;
+      font-family: Arial, sans-serif;
+      font-size: 0.68rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--red);
+      background: rgba(155,28,28,0.07);
+      padding: 3px 10px;
+      border-radius: 20px;
+      margin-bottom: 14px;
+    }
+    .article-featured h2 {
+      font-size: 1.4rem;
+      font-weight: normal;
+      color: var(--dark);
+      margin-bottom: 14px;
+      line-height: 1.35;
+    }
+    .article-meta {
+      font-family: Arial, sans-serif;
+      font-size: 0.76rem;
+      color: var(--gray);
+      margin-bottom: 16px;
+    }
+    .article-featured p {
+      font-family: Arial, sans-serif;
+      font-size: 0.92rem;
+      color: var(--mid);
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    /* Smaller article cards */
+    .article-card {
+      background: var(--white);
+      border-radius: 2px;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 0;
+      margin-bottom: 20px;
+    }
+    .article-card img {
+      width: 120px;
+      height: 100%;
+      object-fit: cover;
+    }
+    .article-card .art-body { padding: 18px 20px; }
+    .article-card h3 {
+      font-size: 0.95rem;
+      font-weight: bold;
+      color: var(--dark);
+      margin-bottom: 8px;
+      line-height: 1.4;
+    }
+    .article-card p {
+      font-family: Arial, sans-serif;
+      font-size: 0.82rem;
+      color: var(--gray);
+      line-height: 1.65;
+    }
+
+    /* Sidebar */
+    .blog-sidebar { position: sticky; top: 88px; }
+    .sidebar-box {
+      background: var(--white);
+      border-radius: 2px;
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+    .sidebar-box h3 {
+      font-size: 0.82rem;
+      font-weight: bold;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gray);
+      margin-bottom: 16px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+    .sidebar-box ul { list-style: none; }
+    .sidebar-box ul li {
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .sidebar-box ul li:last-child { border-bottom: none; }
+    .sidebar-box ul li a {
+      font-family: Arial, sans-serif;
+      font-size: 0.86rem;
+      color: var(--dark);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .sidebar-box ul li a:hover { color: var(--red); }
+    .sidebar-box ul li .sb-date {
+      display: block;
+      font-size: 0.74rem;
+      color: var(--gray);
+      margin-top: 2px;
+    }
+    .topic-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .topic-tag {
+      background: var(--tan);
+      font-family: Arial, sans-serif;
+      font-size: 0.76rem;
+      color: var(--mid);
+      padding: 5px 12px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .topic-tag:hover { background: var(--red); color: #fff; border-color: var(--red); }
+
+    .read-more {
+      font-family: Arial, sans-serif;
+      font-size: 0.8rem;
+      color: var(--red);
+      text-decoration: none;
+      font-weight: bold;
+      letter-spacing: 0.05em;
+    }
+    .read-more:hover { text-decoration: underline; }
+
+    @media (max-width: 780px) {
+      .blog-grid { grid-template-columns: 1fr; }
+      .blog-sidebar { position: static; }
+      .article-card { grid-template-columns: 1fr; }
+      .article-card img { width: 100%; height: 160px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a class="nav-logo" href="index.html">
+      <img src="logo.jpg" alt="Ander Acupuncture logo" />
+      <div class="nav-brand">
+        Ander Acupuncture
+        <span>&amp; Herbs</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="clinic.html">Clinic</a></li>
+      <li><a href="first-visit.html">First Visit</a></li>
+      <li><a href="testimonials.html">Reviews</a></li>
+      <li><a href="videos.html">Videos</a></li>
+      <li><a href="blog.html" class="active">Blog</a></li>
+      <li><a href="index.html#contact" class="nav-cta">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <h1>Blog</h1>
+    <p>Health tips, wellness advice, and insights from Dr. He (Annie) Li.</p>
+  </div>
+
+  <!-- BLOG CONTENT -->
+  <section class="section blog-section">
+    <div class="section-inner">
+      <div class="blog-grid">
+
+        <!-- ARTICLES -->
+        <div>
+
+          <!-- Featured Article 1 -->
+          <div class="article-featured">
+            <img src="images/treatment-room-1.jpg" alt="Acupuncture treatment" />
+            <div class="art-body">
+              <span class="article-tag">Women's Health</span>
+              <h2>Understanding Acupuncture for Women's Health</h2>
+              <div class="article-meta">By Dr. He (Annie) Li &nbsp;·&nbsp; January 2025</div>
+              <p>Acupuncture has been used for thousands of years to support women's health — from regulating menstrual cycles and relieving period pain, to supporting fertility and easing the transition through menopause. As a practitioner with a decade of OB/GYN experience before specializing in Traditional Chinese Medicine, I see daily how these ancient practices can complement and enhance modern women's healthcare.</p>
+              <p>TCM views hormonal balance through the lens of Qi (vital energy), Blood, and the organ systems — particularly the Liver, Spleen, and Kidney. When these are in harmony, the menstrual cycle flows smoothly, fertility is supported, and emotional wellbeing is stable. Disruptions — from stress, diet, trauma, or simply life — can throw these systems out of balance.</p>
+              <a href="#" class="read-more">Continue Reading →</a>
+            </div>
+          </div>
+
+          <!-- Article Card 2 -->
+          <div class="article-card">
+            <img src="images/herb-cabinet.jpg" alt="Chinese herbs" />
+            <div class="art-body">
+              <span class="article-tag">Herbal Medicine</span>
+              <h3>The Power of Herbal Medicine in Modern Wellness</h3>
+              <div class="article-meta" style="font-family:Arial,sans-serif;font-size:0.74rem;color:var(--gray);margin-bottom:10px;">By Dr. He (Annie) Li &nbsp;·&nbsp; January 2025</div>
+              <p>Chinese herbal medicine has a history spanning more than 2,000 years — and it remains one of the most effective natural approaches for a wide range of health concerns, particularly for women's wellness. Learn how custom herbal formulas work, how they are prescribed, and what to expect.</p>
+              <a href="#" class="read-more" style="display:inline-block;margin-top:10px;">Continue Reading →</a>
+            </div>
+          </div>
+
+          <!-- Article Card 3 -->
+          <div class="article-card">
+            <img src="images/waiting-area.jpg" alt="Calm waiting area" />
+            <div class="art-body">
+              <span class="article-tag">Sleep &amp; Stress</span>
+              <h3>Managing Stress and Insomnia with Traditional Chinese Medicine</h3>
+              <div class="article-meta" style="font-family:Arial,sans-serif;font-size:0.74rem;color:var(--gray);margin-bottom:10px;">By Dr. He (Annie) Li &nbsp;·&nbsp; April 2026</div>
+              <p>In TCM, insomnia and chronic stress are not separate problems — they're often two expressions of the same underlying imbalance. Through acupuncture and targeted herbal formulas, we can calm the mind, restore balance, and bring back restful sleep — naturally, without dependency or side effects.</p>
+              <a href="#" class="read-more" style="display:inline-block;margin-top:10px;">Continue Reading →</a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- SIDEBAR -->
+        <div class="blog-sidebar">
+          <div class="sidebar-box">
+            <h3>Recent Posts</h3>
+            <ul>
+              <li>
+                <a href="#">Understanding Acupuncture for Women's Health</a>
+                <span class="sb-date">January 2025</span>
+              </li>
+              <li>
+                <a href="#">The Power of Herbal Medicine in Modern Wellness</a>
+                <span class="sb-date">January 2025</span>
+              </li>
+              <li>
+                <a href="#">Managing Stress and Insomnia with TCM</a>
+                <span class="sb-date">April 2026</span>
+              </li>
+            </ul>
+          </div>
+          <div class="sidebar-box">
+            <h3>Topics</h3>
+            <div class="topic-tags">
+              <a href="#" class="topic-tag">Women's Health</a>
+              <a href="#" class="topic-tag">Fertility</a>
+              <a href="#" class="topic-tag">Herbal Medicine</a>
+              <a href="#" class="topic-tag">Acupuncture</a>
+              <a href="#" class="topic-tag">Sleep</a>
+              <a href="#" class="topic-tag">Stress</a>
+              <a href="#" class="topic-tag">Menopause</a>
+              <a href="#" class="topic-tag">Nutrition</a>
+              <a href="#" class="topic-tag">TCM</a>
+            </div>
+          </div>
+          <div class="sidebar-box" style="background:var(--red);color:#fff;">
+            <h3 style="color:rgba(255,255,255,0.6);border-color:rgba(255,255,255,0.15);">Book an Appointment</h3>
+            <p style="font-family:Arial,sans-serif;font-size:0.86rem;color:rgba(255,255,255,0.8);margin-bottom:16px;">Ready to start your healing journey? Contact us today.</p>
+            <a href="index.html#contact" class="btn btn-primary" style="display:block;text-align:center;padding:10px;">Get in Touch</a>
+            <p style="font-family:Arial,sans-serif;font-size:0.8rem;color:rgba(255,255,255,0.6);margin-top:12px;text-align:center;">
+              <a href="tel:6572210331" style="color:rgba(255,255,255,0.7);text-decoration:none;">(657) 221-0331</a>
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">Ander Acupuncture and Herbs</div>
+        <p class="footer-tagline">Combining the wisdom of Traditional Chinese Medicine with decades of Western medical experience.</p>
+        <span class="footer-lang">English &nbsp;|&nbsp; 中文</span>
+      </div>
+      <div class="footer-col">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Dr. Li</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="clinic.html">Clinic</a></li>
+          <li><a href="first-visit.html">First Visit</a></li>
+          <li><a href="testimonials.html">Reviews</a></li>
+      <li><a href="videos.html">Videos</a></li>
+      <li><a href="blog.html">Blog</a></li>
+          <li><a href="news.html">News</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>
+          1310 W. Stewart Dr.<br>Suite 302<br>Orange, CA 92868<br><br>
+          <a href="tel:6572210331">(657) 221-0331</a><br>
+          <a href="mailto:annieqqpp@gmail.com">annieqqpp@gmail.com</a>
+        </p>
+      </div>
+    </div>
+    <p class="footer-disclaimer">
+      The content on this website is for educational and informational purposes only and is not intended to replace the advice, diagnosis, or treatment of a licensed medical professional.
+    </p>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Ander Acupuncture and Herbs. All rights reserved.</span>
+      <span>1310 W. Stewart Dr., Suite 302, Orange, CA 92868</span>
+    </div>
+  </footer>
+
+</body>
+</html>

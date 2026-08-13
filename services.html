@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services | Ander Acupuncture and Herbs</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ── TREATMENTS GRID ── */
+    .modality-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+      margin-bottom: 16px;
+    }
+    .modality-card {
+      background: var(--white);
+      border-radius: 2px;
+      padding: 30px 22px;
+      text-align: center;
+      border-bottom: 3px solid var(--red);
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .modality-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.08); transform: translateY(-2px); }
+    .modality-card .m-icon { font-size: 2rem; margin-bottom: 14px; }
+    .modality-card h3 { font-size: 0.95rem; font-weight: bold; margin-bottom: 10px; color: var(--dark); }
+    .modality-card p  { font-family: Arial, sans-serif; font-size: 0.82rem; color: var(--gray); line-height: 1.65; }
+
+    /* ── SERVICE CATEGORIES ── */
+    .cat-section { padding: 64px 5%; }
+    .cat-section:nth-child(even) { background: var(--tan); }
+    .cat-section:nth-child(odd)  { background: var(--white); }
+
+    .cat-inner {
+      max-width: 1040px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 60px;
+      align-items: start;
+    }
+    .cat-label-col { position: sticky; top: 88px; }
+    .cat-icon { font-size: 2.8rem; margin-bottom: 16px; }
+    .cat-label-col h2 { font-size: 1.4rem; font-weight: normal; color: var(--dark); margin-bottom: 12px; line-height: 1.3; }
+    .cat-label-col p  { font-family: Arial, sans-serif; font-size: 0.88rem; color: var(--gray); line-height: 1.7; }
+
+    .conditions-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .condition-item {
+      background: var(--cream);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--red);
+      padding: 14px 16px;
+      border-radius: 2px;
+      font-family: Arial, sans-serif;
+      font-size: 0.88rem;
+      color: var(--dark);
+      line-height: 1.5;
+    }
+    .cat-section:nth-child(even) .condition-item { background: var(--white); }
+
+    /* ── CTA STRIP ── */
+    .cta-strip {
+      background: var(--red);
+      color: #fff;
+      padding: 60px 5%;
+      text-align: center;
+    }
+    .cta-strip h2 { font-size: 1.8rem; font-weight: normal; margin-bottom: 12px; }
+    .cta-strip p  { font-family: Arial, sans-serif; font-size: 0.95rem; color: rgba(255,255,255,0.8); margin-bottom: 28px; }
+
+    @media (max-width: 720px) {
+      .cat-inner { grid-template-columns: 1fr; gap: 24px; }
+      .cat-label-col { position: static; }
+      .conditions-list { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a class="nav-logo" href="index.html">
+      <img src="logo.jpg" alt="Ander Acupuncture logo" />
+      <div class="nav-brand">
+        Ander Acupuncture
+        <span>&amp; Herbs</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html" class="active">Services</a></li>
+      <li><a href="clinic.html">Clinic</a></li>
+      <li><a href="first-visit.html">First Visit</a></li>
+      <li><a href="testimonials.html">Reviews</a></li>
+      <li><a href="videos.html">Videos</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="index.html#contact" class="nav-cta">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <h1>Services &amp; Treatments</h1>
+    <p>Comprehensive care rooted in Traditional Chinese Medicine, tailored to your unique health journey.</p>
+  </div>
+
+  <!-- TREATMENT MODALITIES -->
+  <section class="section" style="background:var(--cream);">
+    <div class="section-inner">
+      <p class="section-label">How We Treat</p>
+      <h2 class="section-title">Treatment Modalities</h2>
+      <div class="section-divider"></div>
+      <p class="section-intro">Dr. Li draws on a full spectrum of Traditional Chinese Medicine therapies, often combining multiple modalities within a single personalized treatment plan.</p>
+      <div class="modality-grid">
+        <div class="modality-card">
+          <div class="m-icon">🪡</div>
+          <h3>Acupuncture</h3>
+          <p>Hair-fine sterile needles are placed at specific points along the body's meridians to regulate the flow of Qi, reduce pain, and support healing.</p>
+        </div>
+        <div class="modality-card">
+          <div class="m-icon">🌿</div>
+          <h3>Chinese Herbal Formulas</h3>
+          <p>Time-tested herbal combinations are custom-prescribed based on your TCM pattern diagnosis, supporting treatment between sessions.</p>
+        </div>
+        <div class="modality-card">
+          <div class="m-icon">🔵</div>
+          <h3>Cupping</h3>
+          <p>Suction cups placed on the skin increase local blood circulation, release muscle tension, and draw out stagnation.</p>
+        </div>
+        <div class="modality-card">
+          <div class="m-icon">🔥</div>
+          <h3>Moxibustion</h3>
+          <p>Dried mugwort herb is burned near acupuncture points to warm the meridians, strengthen Yang Qi, and tonify deficiency.</p>
+        </div>
+        <div class="modality-card">
+          <div class="m-icon">✋</div>
+          <h3>Meridian Bodywork</h3>
+          <p>Therapeutic massage and pressure applied along meridian pathways to release blockages, ease tension, and restore flow.</p>
+        </div>
+        <div class="modality-card">
+          <div class="m-icon">🥗</div>
+          <h3>Medicinal Diet Guidance</h3>
+          <p>Dietary and lifestyle recommendations informed by TCM principles — using food as a natural extension of your treatment plan.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATEGORY 1: Women's Health -->
+  <div class="cat-section">
+    <div class="cat-inner">
+      <div class="cat-label-col">
+        <div class="cat-icon">🌸</div>
+        <h2>Women's Health &amp; Hormone Balance</h2>
+        <p>Dr. Li's decade of OB/GYN experience gives her a uniquely deep understanding of women's hormonal health — from puberty through post-menopause.</p>
+      </div>
+      <div class="conditions-list">
+        <div class="condition-item">Irregular Menstruation</div>
+        <div class="condition-item">Painful Periods (Dysmenorrhea)</div>
+        <div class="condition-item">Heavy or Light Menstrual Flow</div>
+        <div class="condition-item">Uterine Bleeding</div>
+        <div class="condition-item">PCOS (Polycystic Ovary Syndrome)</div>
+        <div class="condition-item">PMS &amp; Premenstrual Symptoms</div>
+        <div class="condition-item">Mood Swings &amp; Emotional Fluctuation</div>
+        <div class="condition-item">Breast Tenderness</div>
+        <div class="condition-item">Hormonal Imbalances</div>
+        <div class="condition-item">Endocrine Disorders</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CATEGORY 2: Fertility -->
+  <div class="cat-section">
+    <div class="cat-inner">
+      <div class="cat-label-col">
+        <div class="cat-icon">🤰</div>
+        <h2>Fertility &amp; Infertility Support</h2>
+        <p>Whether pursuing natural conception or navigating assisted reproductive technology, Dr. Li provides evidence-informed TCM support at every step.</p>
+      </div>
+      <div class="conditions-list">
+        <div class="condition-item">Infertility (Natural Conception Support)</div>
+        <div class="condition-item">IVF Preparation &amp; Recovery</div>
+        <div class="condition-item">Uterine Health &amp; Lining</div>
+        <div class="condition-item">Egg Quality Improvement</div>
+        <div class="condition-item">Luteal Phase Deficiency</div>
+        <div class="condition-item">Post-Miscarriage Recovery</div>
+        <div class="condition-item">Unexplained Infertility</div>
+        <div class="condition-item">Hormonal Fertility Support</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CATEGORY 3: Menopause -->
+  <div class="cat-section">
+    <div class="cat-inner">
+      <div class="cat-label-col">
+        <div class="cat-icon">🌙</div>
+        <h2>Menopause Support</h2>
+        <p>TCM offers effective natural relief from menopausal symptoms, helping you transition through this life stage with greater ease and vitality.</p>
+      </div>
+      <div class="conditions-list">
+        <div class="condition-item">Hot Flashes</div>
+        <div class="condition-item">Night Sweats</div>
+        <div class="condition-item">Irritability &amp; Mood Swings</div>
+        <div class="condition-item">Sleep Disturbances</div>
+        <div class="condition-item">Anxiety &amp; Depression</div>
+        <div class="condition-item">Fatigue &amp; Low Energy</div>
+        <div class="condition-item">Weight Gain During Menopause</div>
+        <div class="condition-item">Bone Density Support</div>
+        <div class="condition-item">Menopause Syndrome</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CATEGORY 4: Pain -->
+  <div class="cat-section">
+    <div class="cat-inner">
+      <div class="cat-label-col">
+        <div class="cat-icon">💪</div>
+        <h2>Pain Management</h2>
+        <p>Acupuncture is one of the most well-researched natural approaches to pain. Dr. Li treats acute and chronic pain conditions with precision and care.</p>
+      </div>
+      <div class="conditions-list">
+        <div class="condition-item">Neck &amp; Shoulder Pain</div>
+        <div class="condition-item">Back Pain (Upper &amp; Lower)</div>
+        <div class="condition-item">Sciatica</div>
+        <div class="condition-item">Headaches &amp; Migraines</div>
+        <div class="condition-item">Body Ache</div>
+        <div class="condition-item">Epigastric (Abdominal) Pain</div>
+        <div class="condition-item">Chronic Fatigue Syndrome</div>
+        <div class="condition-item">Postpartum Recovery &amp; Pain</div>
+        <div class="condition-item">Joint Pain &amp; Inflammation</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CATEGORY 5: Digestive & Wellness -->
+  <div class="cat-section">
+    <div class="cat-inner">
+      <div class="cat-label-col">
+        <div class="cat-icon">🫁</div>
+        <h2>Digestive, Sleep &amp; General Wellness</h2>
+        <p>TCM excels at addressing root causes of digestive dysfunction, sleep disorders, and immune vulnerability — helping your body function as it should.</p>
+      </div>
+      <div class="conditions-list">
+        <div class="condition-item">Bloating &amp; Gas</div>
+        <div class="condition-item">Stomach Pain &amp; Gastritis</div>
+        <div class="condition-item">Constipation</div>
+        <div class="condition-item">Diarrhea &amp; IBS</div>
+        <div class="condition-item">Poor Appetite</div>
+        <div class="condition-item">Insomnia &amp; Sleep Problems</div>
+        <div class="condition-item">Anemia</div>
+        <div class="condition-item">Low Immunity &amp; Frequent Illness</div>
+        <div class="condition-item">Stress &amp; Anxiety</div>
+        <div class="condition-item">Post COVID-19 Syndrome</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CATEGORY 6: Weight & Beauty -->
+  <div class="cat-section">
+    <div class="cat-inner">
+      <div class="cat-label-col">
+        <div class="cat-icon">✨</div>
+        <h2>Weight, Beauty &amp; Constitution</h2>
+        <p>Holistic approaches to weight management and beauty that work with your individual constitution, rather than against it.</p>
+      </div>
+      <div class="conditions-list">
+        <div class="condition-item">Weight Management</div>
+        <div class="condition-item">Metabolic Support</div>
+        <div class="condition-item">Traditional Beauty Therapy</div>
+        <div class="condition-item">Complexion &amp; Skin Improvement</div>
+        <div class="condition-item">Constitution Assessment (TCM)</div>
+        <div class="condition-item">Dietary Guidance for Body Type</div>
+        <div class="condition-item">Energy &amp; Vitality Restoration</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA STRIP -->
+  <div class="cta-strip">
+    <h2>Not Sure Where to Start?</h2>
+    <p>Contact us and Dr. Li will help determine which services are right for your specific health goals.</p>
+    <a href="index.html#contact" class="btn btn-primary">Get in Touch</a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">Ander Acupuncture and Herbs</div>
+        <p class="footer-tagline">Combining the wisdom of Traditional Chinese Medicine with decades of Western medical experience.</p>
+        <span class="footer-lang">English &nbsp;|&nbsp; 中文</span>
+      </div>
+      <div class="footer-col">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Dr. Li</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="clinic.html">Clinic</a></li>
+          <li><a href="first-visit.html">First Visit</a></li>
+          <li><a href="testimonials.html">Reviews</a></li>
+      <li><a href="videos.html">Videos</a></li>
+      <li><a href="blog.html">Blog</a></li>
+          <li><a href="news.html">News</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>
+          1310 W. Stewart Dr.<br>Suite 302<br>Orange, CA 92868<br><br>
+          <a href="tel:6572210331">(657) 221-0331</a><br>
+          <a href="mailto:annieqqpp@gmail.com">annieqqpp@gmail.com</a>
+        </p>
+      </div>
+    </div>
+    <p class="footer-disclaimer">
+      The content on this website is for educational and informational purposes only and is not intended to replace the advice, diagnosis, or treatment of a licensed medical professional.
+    </p>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Ander Acupuncture and Herbs. All rights reserved.</span>
+      <span>1310 W. Stewart Dr., Suite 302, Orange, CA 92868</span>
+    </div>
+  </footer>
+
+</body>
+</html>

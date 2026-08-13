@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Videos | Ander Acupuncture and Herbs</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ── HERO with clinic photo ── */
+    .video-hero {
+      position: relative;
+      height: 380px;
+      overflow: hidden;
+    }
+    .video-hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 30%;
+      display: block;
+    }
+    .video-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(60,8,8,0.5) 0%, rgba(20,4,4,0.75) 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+      padding: 0 5%;
+    }
+    .video-hero-overlay .hero-tag {
+      font-family: Arial, sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 14px;
+    }
+    .video-hero-overlay h1 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: normal;
+      margin-bottom: 12px;
+      line-height: 1.25;
+    }
+    .video-hero-overlay p {
+      font-family: Arial, sans-serif;
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.72);
+      max-width: 520px;
+    }
+
+    /* ── VIDEO CARDS ── */
+    .videos-section { background: var(--cream); }
+
+    .video-card {
+      background: var(--white);
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+      margin-bottom: 52px;
+    }
+    .video-card:last-child { margin-bottom: 0; }
+
+    .video-card-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      align-items: stretch;
+    }
+
+    .video-card-inner.reverse { direction: rtl; }
+    .video-card-inner.reverse > * { direction: ltr; }
+
+    .video-player-wrap {
+      position: relative;
+      background: #000;
+    }
+    .video-player-wrap video {
+      width: 100%;
+      height: 100%;
+      min-height: 300px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .video-info {
+      padding: 40px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .video-lang-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: Arial, sans-serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--red);
+      background: rgba(155,28,28,0.07);
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+      width: fit-content;
+    }
+
+    .video-info h2 {
+      font-size: 1.4rem;
+      font-weight: normal;
+      color: var(--dark);
+      margin-bottom: 14px;
+      line-height: 1.3;
+    }
+
+    .video-info p {
+      font-family: Arial, sans-serif;
+      font-size: 0.9rem;
+      color: var(--mid);
+      line-height: 1.78;
+      margin-bottom: 20px;
+    }
+
+    .video-divider {
+      width: 36px;
+      height: 2px;
+      background: var(--red);
+      margin-bottom: 20px;
+    }
+
+    .video-topics {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .topic-chip {
+      background: var(--tan);
+      border: 1px solid var(--border);
+      font-family: Arial, sans-serif;
+      font-size: 0.76rem;
+      color: var(--mid);
+      padding: 4px 12px;
+      border-radius: 20px;
+    }
+
+    /* ── SECTION DIVIDER ── */
+    .video-section-sep {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin: 12px 0 40px;
+    }
+    .video-section-sep::before,
+    .video-section-sep::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+    .video-section-sep span {
+      font-family: Arial, sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gray);
+      white-space: nowrap;
+    }
+
+    @media (max-width: 768px) {
+      .video-card-inner,
+      .video-card-inner.reverse { grid-template-columns: 1fr; direction: ltr; }
+      .video-player-wrap video { min-height: 220px; }
+      .video-info { padding: 28px 24px; }
+      .video-hero { height: 280px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a class="nav-logo" href="index.html">
+      <img src="logo.jpg" alt="Ander Acupuncture logo" />
+      <div class="nav-brand">
+        Ander Acupuncture
+        <span>&amp; Herbs</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="clinic.html">Clinic</a></li>
+      <li><a href="first-visit.html">First Visit</a></li>
+      <li><a href="testimonials.html">Reviews</a></li>
+      <li><a href="videos.html" class="active">Videos</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="index.html#contact" class="nav-cta">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO with clinic photo -->
+  <div class="video-hero">
+    <img src="images/dr-li-clinic.png" alt="Dr. He (Annie) Li in clinic" />
+    <div class="video-hero-overlay">
+      <div class="hero-tag">Ander Acupuncture &amp; Herbs · Orange, CA</div>
+      <h1>Watch &amp; Learn from<br>Dr. He (Annie) Li</h1>
+      <p>Hear Dr. Li share her approach to healing, her background, and what you can expect at the clinic — in English and Chinese.</p>
+    </div>
+  </div>
+
+  <!-- VIDEOS -->
+  <section class="section videos-section">
+    <div class="section-inner">
+
+      <p class="section-label">Patient &amp; Practitioner Perspectives</p>
+      <h2 class="section-title">Video Gallery</h2>
+      <div class="section-divider"></div>
+
+      <!-- VIDEO 1 — English -->
+      <div class="video-section-sep"><span>English</span></div>
+      <div class="video-card">
+        <div class="video-card-inner">
+          <div class="video-player-wrap">
+            <video controls preload="metadata">
+              <source src="videos/vid3english.mp4" type="video/mp4" />
+              Your browser does not support HTML5 video.
+            </video>
+          </div>
+          <div class="video-info">
+            <span class="video-lang-badge">🇺🇸 &nbsp;English</span>
+            <h2>Dr. Li's Story &amp; Approach to Integrative Medicine</h2>
+            <div class="video-divider"></div>
+            <p>In this video, Dr. He (Annie) Li speaks in English about her journey from practicing as an OB/GYN physician in China to becoming a licensed acupuncturist and Doctor of Acupuncture and Integrative Medicine in Southern California.</p>
+            <p>She shares her philosophy of patient-centered care, how she combines Western medical knowledge with Traditional Chinese Medicine, and what patients can expect at Ander Acupuncture and Herbs.</p>
+            <div class="video-topics">
+              <span class="topic-chip">Her Background</span>
+              <span class="topic-chip">TCM Philosophy</span>
+              <span class="topic-chip">Patient Care</span>
+              <span class="topic-chip">Women's Health</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- VIDEO 2 — Chinese -->
+      <div class="video-section-sep"><span>中文 · Mandarin Chinese</span></div>
+      <div class="video-card">
+        <div class="video-card-inner reverse">
+          <div class="video-player-wrap">
+            <video controls preload="metadata">
+              <source src="videos/vid2chinese.mp4" type="video/mp4" />
+              Your browser does not support HTML5 video.
+            </video>
+          </div>
+          <div class="video-info">
+            <span class="video-lang-badge">🇨🇳 &nbsp;中文 (Mandarin)</span>
+            <h2>李医生介绍 — 中医与整合医学</h2>
+            <div class="video-divider"></div>
+            <p>李医生 (He Annie Li) 以中文分享她的行医经历和治疗理念。她结合中医传统与现代西方医学，为患者提供全面、个性化的医疗方案。</p>
+            <p>本视频适合更喜欢以中文了解诊所信息的患者。诊所提供中英双语服务。</p>
+            <div class="video-topics">
+              <span class="topic-chip">中医理念</span>
+              <span class="topic-chip">女性健康</span>
+              <span class="topic-chip">针灸治疗</span>
+              <span class="topic-chip">双语服务</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- VIDEO 3 — Clinic Showcase -->
+      <div class="video-section-sep"><span>Clinic Showcase</span></div>
+      <div class="video-card">
+        <div class="video-card-inner">
+          <div class="video-player-wrap">
+            <video controls preload="metadata" loop>
+              <source src="videos/vid1notalk.mp4" type="video/mp4" />
+              Your browser does not support HTML5 video.
+            </video>
+          </div>
+          <div class="video-info">
+            <span class="video-lang-badge">🎬 &nbsp;Clinic Showcase</span>
+            <h2>Inside Ander Acupuncture &amp; Herbs</h2>
+            <div class="video-divider"></div>
+            <p>A visual tour of the clinic — our calming treatment rooms, herbal dispensary, and the warm, welcoming environment we've created for every patient who walks through our doors.</p>
+            <p>The clinic is designed with simplicity, cleanliness, and warmth in mind — incorporating subtle Chinese elements and calming greenery to help you slow down and feel at ease from the moment you arrive.</p>
+            <div class="video-topics">
+              <span class="topic-chip">Treatment Rooms</span>
+              <span class="topic-chip">Herbal Dispensary</span>
+              <span class="topic-chip">Clinic Environment</span>
+              <span class="topic-chip">Orange, CA</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section" style="background:var(--red);text-align:center;">
+    <div class="section-inner">
+      <h2 class="section-title" style="color:#fff;">Ready to Experience It for Yourself?</h2>
+      <p style="font-family:Arial,sans-serif;font-size:0.95rem;color:rgba(255,255,255,0.8);margin-bottom:28px;max-width:480px;margin-left:auto;margin-right:auto;">Dr. Li accepts patients by appointment. Contact us in English or Chinese.</p>
+      <a href="index.html#contact" class="btn btn-primary" style="margin-right:12px;">Book an Appointment</a>
+      <a href="tel:6572210331" class="btn" style="color:#fff;border-color:rgba(255,255,255,0.4);">(657) 221-0331</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">Ander Acupuncture and Herbs</div>
+        <p class="footer-tagline">Combining the wisdom of Traditional Chinese Medicine with decades of Western medical experience.</p>
+        <span class="footer-lang">English &nbsp;|&nbsp; 中文</span>
+      </div>
+      <div class="footer-col">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Dr. Li</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="clinic.html">Clinic</a></li>
+          <li><a href="first-visit.html">First Visit</a></li>
+          <li><a href="testimonials.html">Reviews</a></li>
+          <li><a href="videos.html">Videos</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="news.html">News</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>
+          1310 W. Stewart Dr.<br>Suite 302<br>Orange, CA 92868<br><br>
+          <a href="tel:6572210331">(657) 221-0331</a><br>
+          <a href="mailto:annieqqpp@gmail.com">annieqqpp@gmail.com</a>
+        </p>
+      </div>
+    </div>
+    <p class="footer-disclaimer">
+      The content on this website is for educational and informational purposes only and is not intended to replace the advice, diagnosis, or treatment of a licensed medical professional.
+    </p>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Ander Acupuncture and Herbs. All rights reserved.</span>
+      <span>1310 W. Stewart Dr., Suite 302, Orange, CA 92868</span>
+    </div>
+  </footer>
+
+</body>
+</html>

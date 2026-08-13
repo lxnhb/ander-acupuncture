@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Patient Reviews | Ander Acupuncture and Herbs</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ── RATING SUMMARY ── */
+    .rating-banner {
+      background: var(--red);
+      color: #fff;
+      padding: 48px 5%;
+      text-align: center;
+    }
+    .rating-banner .rating-num {
+      font-size: 4rem;
+      font-weight: bold;
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+    .stars-large { font-size: 1.8rem; letter-spacing: 4px; margin-bottom: 10px; }
+    .rating-banner p {
+      font-family: Arial, sans-serif;
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.75);
+    }
+
+    /* ── REVIEW GRID ── */
+    .reviews-section { background: var(--cream); }
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 24px;
+    }
+
+    /* ── REVIEW CARD ── */
+    .review-card {
+      background: var(--white);
+      border-radius: 8px;
+      padding: 28px 28px 24px;
+      box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      transition: box-shadow 0.2s;
+    }
+    .review-card:hover { box-shadow: 0 4px 18px rgba(0,0,0,0.1); }
+
+    .review-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .reviewer-avatar {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: var(--red);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: Arial, sans-serif;
+      font-size: 0.88rem;
+      font-weight: bold;
+      letter-spacing: 0.04em;
+      flex-shrink: 0;
+    }
+    .reviewer-info { flex: 1; }
+    .reviewer-name {
+      font-weight: bold;
+      font-size: 0.97rem;
+      color: var(--dark);
+      margin-bottom: 4px;
+    }
+    .review-stars { color: #D4A017; font-size: 0.95rem; letter-spacing: 1px; }
+
+    .review-text {
+      font-family: Arial, sans-serif;
+      font-size: 0.9rem;
+      color: var(--mid);
+      line-height: 1.8;
+      flex: 1;
+    }
+
+    .review-footer {
+      font-family: Arial, sans-serif;
+      font-size: 0.74rem;
+      color: var(--gray);
+      border-top: 1px solid var(--border);
+      padding-top: 12px;
+    }
+
+    /* featured card gets a left border accent */
+    .review-card.featured {
+      border-top: 3px solid var(--red);
+    }
+
+    /* ── CTA ── */
+    .reviews-cta {
+      background: var(--tan);
+      padding: 56px 5%;
+      text-align: center;
+    }
+    .reviews-cta h2 { font-size: 1.5rem; font-weight: normal; margin-bottom: 10px; }
+    .reviews-cta p {
+      font-family: Arial, sans-serif;
+      font-size: 0.92rem;
+      color: var(--gray);
+      margin-bottom: 24px;
+    }
+
+    @media (max-width: 600px) {
+      .reviews-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a class="nav-logo" href="index.html">
+      <img src="logo.jpg" alt="Ander Acupuncture logo" />
+      <div class="nav-brand">
+        Ander Acupuncture
+        <span>&amp; Herbs</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="clinic.html">Clinic</a></li>
+      <li><a href="first-visit.html">First Visit</a></li>
+      <li><a href="testimonials.html" class="active">Reviews</a></li>
+      <li><a href="videos.html">Videos</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="index.html#contact" class="nav-cta">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <h1>Patient Reviews</h1>
+    <p>Real stories from real patients — in their own words.</p>
+  </div>
+
+  <!-- RATING BANNER -->
+  <div class="rating-banner">
+    <div class="rating-num">5.0</div>
+    <div class="stars-large">★★★★★</div>
+    <p>5-star rated by patients across Southern California</p>
+  </div>
+
+  <!-- REVIEWS -->
+  <section class="section reviews-section">
+    <div class="section-inner">
+      <p class="section-label">What Our Patients Say</p>
+      <h2 class="section-title">Client Reviews</h2>
+      <div class="section-divider"></div>
+      <div class="reviews-grid">
+
+        <!-- Ana Patricia -->
+        <div class="review-card featured">
+          <div class="review-header">
+            <div class="reviewer-avatar">AP</div>
+            <div class="reviewer-info">
+              <div class="reviewer-name">Ana Patricia</div>
+              <div class="review-stars">★★★★★</div>
+            </div>
+          </div>
+          <p class="review-text">Dr. Annie started treating me not too long ago, and the difference has been incredible. Before seeing her, I was in severe pain and could barely move my shoulders or neck. As someone new to acupuncture, I was a little nervous, but she made me feel completely at ease and was so gentle throughout the entire process. She also provided personalized herbal remedies to support my healing at home, which has made a huge difference. I highly recommend Dr. Annie to anyone looking for a doctor who truly cares and is dedicated to supporting your health journey.</p>
+          <div class="review-footer">Pain Management · Southern California</div>
+        </div>
+
+        <!-- Ligia -->
+        <div class="review-card featured">
+          <div class="review-header">
+            <div class="reviewer-avatar">L</div>
+            <div class="reviewer-info">
+              <div class="reviewer-name">Ligia</div>
+              <div class="review-stars">★★★★★</div>
+            </div>
+          </div>
+          <p class="review-text">I have been a client for over a year and Annie is the kindest professional I know. Not only has she been healing and giving me exercises to improve with my pain, but her red light/heated acupuncture sessions are the best! I used to be afraid of the needles, but she uses baby ones that I don't even feel. She is very delicate and patient. When I bring her a health issue she will always find a way to improve the condition with gua sha, acupuncture, or herbs. Annie comes from a family of physicians, making her very knowledgeable. I love coming to see her and my body enjoys it even more! Give her a try and you will be hooked. No pain here, just healing and growing. You will feel amazing afterwards.</p>
+          <div class="review-footer">Long-term Patient · Over 1 Year</div>
+        </div>
+
+        <!-- Amabel U -->
+        <div class="review-card featured">
+          <div class="review-header">
+            <div class="reviewer-avatar">AU</div>
+            <div class="reviewer-info">
+              <div class="reviewer-name">Amabel U</div>
+              <div class="review-stars">★★★★★</div>
+            </div>
+          </div>
+          <p class="review-text">So fortunate to have found Dr. He Li (Ander Acupuncture and Herbs). Been in treatment for a little over 3 months due to pain in spinal area and leg. Western medicine — Physical Therapy and oral medication — had failed to work on my body. Within 2–3 acupuncture sessions, pain had subsided significantly to allow for normal walking activities. She listened to my concerns with such compassion, assessed my health condition and knew exactly where to place these tiny needles. She is extremely intuitive, kind and has an overwhelming amount of knowledge of traditional Chinese medicine in acupuncture and herbal teas for natural healing. Red Infrared heat lamp was used to assist with healing. Some sessions involved cupping and gua sha. She is an amazing practitioner; I am full of gratitude as I have much needed relief.</p>
+          <div class="review-footer">Spinal &amp; Leg Pain · Orange County</div>
+        </div>
+
+        <!-- Brenda Torres -->
+        <div class="review-card">
+          <div class="review-header">
+            <div class="reviewer-avatar">BT</div>
+            <div class="reviewer-info">
+              <div class="reviewer-name">Brenda Torres</div>
+              <div class="review-stars">★★★★★</div>
+            </div>
+          </div>
+          <p class="review-text">Hello, I have been seeing Annie for acupuncture and she is great. She is willing to accommodate time schedules that work for me. Her space is really clean. She is very professional and knowledgeable. I have seen an improvement. I would highly recommend.</p>
+          <div class="review-footer">Acupuncture Patient</div>
+        </div>
+
+        <!-- Orly Frank -->
+        <div class="review-card">
+          <div class="review-header">
+            <div class="reviewer-avatar">OF</div>
+            <div class="reviewer-info">
+              <div class="reviewer-name">Orly Frank</div>
+              <div class="review-stars">★★★★★</div>
+            </div>
+          </div>
+          <p class="review-text">Dr. Annie Li is a miracle worker and an angel on earth. She is not only a medical doctor in her native China, she comes from a long line of healers, surgeons, practitioners of Traditional Chinese Medicine. Her breadth of knowledge coupled with her extraordinary kindness and true desire to help those suffering with various ailments is unique in this world. So much of what she does is likely inaccessible to the Western mind as she draws upon knowledge with thousands of years of ancient history — this knowledge is literally in her blood. I cannot say enough about the ways in which Dr. Li has helped me over the last few years. I drive many hours to and from Ventura County to see her in Orange County. I adore her as a person as much as I am in awe of her talent as a healer. If a person is fortunate enough to meet just one individual like Dr. Li in his or her lifetime, one would be truly blessed.</p>
+          <div class="review-footer">Long-term Patient · Ventura County · A year ago</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="reviews-cta">
+    <h2>Ready to Experience the Difference?</h2>
+    <p>Join our patients and start your journey toward lasting health and balance.</p>
+    <a href="index.html#contact" class="btn btn-red">Book an Appointment</a>
+    &nbsp;&nbsp;
+    <a href="tel:6572210331" class="btn btn-outline">(657) 221-0331</a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">Ander Acupuncture and Herbs</div>
+        <p class="footer-tagline">Combining the wisdom of Traditional Chinese Medicine with decades of Western medical experience.</p>
+        <span class="footer-lang">English &nbsp;|&nbsp; 中文</span>
+      </div>
+      <div class="footer-col">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Dr. Li</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="clinic.html">Clinic</a></li>
+          <li><a href="first-visit.html">First Visit</a></li>
+          <li><a href="testimonials.html">Reviews</a></li>
+      <li><a href="videos.html">Videos</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="news.html">News</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>
+          1310 W. Stewart Dr.<br>Suite 302<br>Orange, CA 92868<br><br>
+          <a href="tel:6572210331">(657) 221-0331</a><br>
+          <a href="mailto:annieqqpp@gmail.com">annieqqpp@gmail.com</a>
+        </p>
+      </div>
+    </div>
+    <p class="footer-disclaimer">
+      The content on this website is for educational and informational purposes only and is not intended to replace the advice, diagnosis, or treatment of a licensed medical professional.
+    </p>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Ander Acupuncture and Herbs. All rights reserved.</span>
+      <span>1310 W. Stewart Dr., Suite 302, Orange, CA 92868</span>
+    </div>
+  </footer>
+
+</body>
+</html>

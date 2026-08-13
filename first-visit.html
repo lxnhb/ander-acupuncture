@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>First Visit | Ander Acupuncture and Herbs</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ── STEPS ── */
+    .steps-section { background: var(--white); }
+    .step-block {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 32px;
+      align-items: start;
+      padding: 48px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .step-block:last-child { border-bottom: none; }
+    .step-num-col { text-align: center; }
+    .step-num {
+      width: 64px;
+      height: 64px;
+      border: 2px solid var(--red);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: var(--red);
+      margin: 0 auto 12px;
+    }
+    .step-line {
+      width: 2px;
+      height: calc(100% - 76px);
+      background: var(--border);
+      margin: 0 auto;
+    }
+    .step-block:last-child .step-line { display: none; }
+    .step-content h2 {
+      font-size: 1.3rem;
+      font-weight: normal;
+      color: var(--dark);
+      margin-bottom: 14px;
+    }
+    .step-content p {
+      font-family: Arial, sans-serif;
+      font-size: 0.92rem;
+      color: var(--mid);
+      line-height: 1.8;
+      margin-bottom: 14px;
+    }
+    .step-content ul {
+      list-style: none;
+      margin: 0 0 14px;
+      padding: 0;
+    }
+    .step-content ul li {
+      font-family: Arial, sans-serif;
+      font-size: 0.88rem;
+      color: var(--mid);
+      padding: 6px 0 6px 20px;
+      position: relative;
+      border-bottom: 1px solid var(--border);
+    }
+    .step-content ul li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--red);
+    }
+    .step-content ul li:first-child { border-top: 1px solid var(--border); }
+
+    /* ── WHAT TO BRING ── */
+    .bring-section { background: var(--tan); }
+    .bring-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 18px;
+    }
+    .bring-item {
+      background: var(--white);
+      border-left: 4px solid var(--red);
+      padding: 18px 16px;
+      border-radius: 2px;
+      font-family: Arial, sans-serif;
+      font-size: 0.88rem;
+      color: var(--dark);
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .bring-item .b-icon { font-size: 1.2rem; flex-shrink: 0; }
+
+    /* ── FAQ ── */
+    .faq-section { background: var(--cream); }
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+      padding: 22px 0;
+    }
+    .faq-item:first-child { border-top: 1px solid var(--border); }
+    .faq-q {
+      font-size: 1rem;
+      font-weight: bold;
+      color: var(--dark);
+      margin-bottom: 10px;
+      cursor: pointer;
+    }
+    .faq-a {
+      font-family: Arial, sans-serif;
+      font-size: 0.9rem;
+      color: var(--mid);
+      line-height: 1.75;
+    }
+
+    @media (max-width: 600px) {
+      .step-block { grid-template-columns: 56px 1fr; gap: 20px; }
+      .step-num { width: 52px; height: 52px; font-size: 1.1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a class="nav-logo" href="index.html">
+      <img src="logo.jpg" alt="Ander Acupuncture logo" />
+      <div class="nav-brand">
+        Ander Acupuncture
+        <span>&amp; Herbs</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="clinic.html">Clinic</a></li>
+      <li><a href="first-visit.html" class="active">First Visit</a></li>
+      <li><a href="testimonials.html">Reviews</a></li>
+      <li><a href="videos.html">Videos</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="index.html#contact" class="nav-cta">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <h1>Your First Visit</h1>
+    <p>Here's what to expect when you come in — so you can arrive relaxed and prepared.</p>
+  </div>
+
+  <!-- INTRO -->
+  <section class="section" style="background:var(--white);padding-bottom:0;">
+    <div class="section-inner">
+      <p class="section-label">The Process</p>
+      <h2 class="section-title">Three Steps to Healing</h2>
+      <div class="section-divider"></div>
+      <p class="section-intro">Dr. Li's approach is built on deep listening. Your first visit is longer than a typical appointment — it's a comprehensive conversation about who you are, not just what hurts.</p>
+    </div>
+  </section>
+
+  <!-- STEPS -->
+  <section class="section steps-section" style="padding-top:0;">
+    <div class="section-inner">
+
+      <div class="step-block">
+        <div class="step-num-col">
+          <div class="step-num">1</div>
+          <div class="step-line"></div>
+        </div>
+        <div class="step-content">
+          <h2>Detailed Consultation</h2>
+          <p>Your first visit begins with an in-depth conversation. Dr. Li takes the time to understand your full picture — not just the presenting complaint, but the whole person.</p>
+          <p>She will ask about:</p>
+          <ul>
+            <li>Your current health concerns and symptoms</li>
+            <li>Complete medical history and prior treatments</li>
+            <li>Sleep patterns and energy levels</li>
+            <li>Diet and digestion</li>
+            <li>Emotional wellbeing and stress levels</li>
+            <li>Menstrual and reproductive history (for women's health concerns)</li>
+            <li>Family health history</li>
+          </ul>
+          <p>She also uses Traditional Chinese Medicine diagnostic methods: observation (tongue, complexion), listening, questioning, and pulse-taking — each providing insight into your internal balance.</p>
+        </div>
+      </div>
+
+      <div class="step-block">
+        <div class="step-num-col">
+          <div class="step-num">2</div>
+          <div class="step-line"></div>
+        </div>
+        <div class="step-content">
+          <h2>Personalized Treatment Plan</h2>
+          <p>Based on your consultation, Dr. Li creates a treatment plan specific to your constitution, pattern, and goals — never a one-size-fits-all protocol.</p>
+          <p>Your plan may include:</p>
+          <ul>
+            <li>Acupuncture session frequency and focus points</li>
+            <li>Chinese herbal formula tailored to your TCM pattern</li>
+            <li>Dietary adjustments based on your constitution</li>
+            <li>Sleep hygiene and lifestyle recommendations</li>
+            <li>At-home acupressure or self-care practices</li>
+            <li>Cupping, moxibustion, or bodywork as needed</li>
+          </ul>
+          <p>Dr. Li will explain the plan in full, answer your questions, and make sure you understand the "why" behind each recommendation.</p>
+        </div>
+      </div>
+
+      <div class="step-block">
+        <div class="step-num-col">
+          <div class="step-num">3</div>
+          <div class="step-line"></div>
+        </div>
+        <div class="step-content">
+          <h2>Gentle, Sustainable Healing</h2>
+          <p>TCM works with your body's own healing capacity — results build over time rather than masking symptoms with a quick fix. Most treatment courses span several weeks to a few months depending on your condition.</p>
+          <p>What to expect during your treatment journey:</p>
+          <ul>
+            <li>Regular sessions (often weekly at first, then tapering)</li>
+            <li>Ongoing check-ins to assess your progress</li>
+            <li>Adjustments to the plan as your body responds</li>
+            <li>Open communication — always let Dr. Li know how you're feeling</li>
+            <li>Gradual, lasting improvements in how you feel day to day</li>
+          </ul>
+          <p>Many patients notice changes in energy, sleep, or mood within the first few sessions, with deeper improvements developing over the course of treatment.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- WHAT TO BRING -->
+  <section class="section bring-section">
+    <div class="section-inner">
+      <p class="section-label">Come Prepared</p>
+      <h2 class="section-title">What to Bring</h2>
+      <div class="section-divider"></div>
+      <div class="bring-grid">
+        <div class="bring-item">
+          <span class="b-icon">📋</span>
+          List of current medications and supplements
+        </div>
+        <div class="bring-item">
+          <span class="b-icon">📁</span>
+          Any recent lab work or medical reports
+        </div>
+        <div class="bring-item">
+          <span class="b-icon">👕</span>
+          Loose, comfortable clothing (for easy needle access)
+        </div>
+        <div class="bring-item">
+          <span class="b-icon">🍽️</span>
+          Have a light meal 1–2 hours before your visit
+        </div>
+        <div class="bring-item">
+          <span class="b-icon">💧</span>
+          Stay well-hydrated on the day of your appointment
+        </div>
+        <div class="bring-item">
+          <span class="b-icon">🕐</span>
+          Arrive 5–10 minutes early for your first visit
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section faq-section">
+    <div class="section-inner">
+      <p class="section-label">Common Questions</p>
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <div class="section-divider"></div>
+
+      <div class="faq-item">
+        <div class="faq-q">Does acupuncture hurt?</div>
+        <div class="faq-a">Most patients are surprised by how gentle acupuncture feels. The needles are hair-thin — much finer than a hypodermic needle. You may feel a brief moment of sensation when a needle is inserted, followed by a sense of heaviness, warmth, or relaxation. Many patients fall asleep during treatment.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">How long is a typical session?</div>
+        <div class="faq-a">Your first visit (including consultation and treatment) will last approximately 75–90 minutes. Follow-up sessions are typically 50–60 minutes.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">How many sessions will I need?</div>
+        <div class="faq-a">This varies by condition. Acute issues may resolve in 4–6 sessions, while chronic conditions often benefit from 8–12 sessions or more. Dr. Li will give you a realistic estimate after your initial consultation.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Is acupuncture safe?</div>
+        <div class="faq-a">Yes. Dr. Li uses only sterile, single-use disposable needles and follows strict hygiene protocols. As a licensed acupuncturist with 20+ years of healthcare experience, she takes every precaution to ensure your safety.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Can I continue my current medications?</div>
+        <div class="faq-a">Yes — acupuncture and TCM herbs are often used alongside conventional treatments. Always inform Dr. Li of any medications or supplements you are taking so she can customize your care safely.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Do you offer services in Chinese?</div>
+        <div class="faq-a">Yes. Dr. Li is fluent in Mandarin Chinese and is happy to conduct consultations and treatment in either English or Chinese — whichever is most comfortable for you.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section" style="background:var(--red);text-align:center;">
+    <div class="section-inner">
+      <h2 class="section-title" style="color:#fff;">Ready to Schedule Your First Visit?</h2>
+      <p style="font-family:Arial,sans-serif;font-size:0.95rem;color:rgba(255,255,255,0.8);margin-bottom:28px;">Dr. Li accepts patients by appointment. Reach out to get started.</p>
+      <a href="index.html#contact" class="btn btn-primary">Contact Us</a>
+      &nbsp;&nbsp;
+      <a href="tel:6572210331" class="btn" style="color:#fff;border-color:rgba(255,255,255,0.4);">(657) 221-0331</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">Ander Acupuncture and Herbs</div>
+        <p class="footer-tagline">Combining the wisdom of Traditional Chinese Medicine with decades of Western medical experience.</p>
+        <span class="footer-lang">English &nbsp;|&nbsp; 中文</span>
+      </div>
+      <div class="footer-col">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Dr. Li</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="clinic.html">Clinic</a></li>
+          <li><a href="first-visit.html">First Visit</a></li>
+          <li><a href="testimonials.html">Reviews</a></li>
+      <li><a href="videos.html">Videos</a></li>
+      <li><a href="blog.html">Blog</a></li>
+          <li><a href="news.html">News</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>
+          1310 W. Stewart Dr.<br>Suite 302<br>Orange, CA 92868<br><br>
+          <a href="tel:6572210331">(657) 221-0331</a><br>
+          <a href="mailto:annieqqpp@gmail.com">annieqqpp@gmail.com</a>
+        </p>
+      </div>
+    </div>
+    <p class="footer-disclaimer">
+      The content on this website is for educational and informational purposes only and is not intended to replace the advice, diagnosis, or treatment of a licensed medical professional.
+    </p>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Ander Acupuncture and Herbs. All rights reserved.</span>
+      <span>1310 W. Stewart Dr., Suite 302, Orange, CA 92868</span>
+    </div>
+  </footer>
+
+</body>
+</html>

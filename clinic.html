@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Clinic | Ander Acupuncture and Herbs</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ── GALLERY ── */
+    .gallery-section { background: var(--dark); padding: 64px 5%; }
+    .gallery-grid {
+      max-width: 1040px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      grid-template-rows: auto auto;
+      gap: 12px;
+    }
+    .gallery-main {
+      grid-row: 1 / 3;
+    }
+    .gallery-main img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 2px;
+      display: block;
+    }
+    .gallery-side {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .gallery-side img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      border-radius: 2px;
+      display: block;
+    }
+    .gallery-caption {
+      max-width: 1040px;
+      margin: 16px auto 0;
+      font-family: Arial, sans-serif;
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.35);
+      font-style: italic;
+    }
+
+    /* ── DESCRIPTION ── */
+    .clinic-desc { background: var(--white); }
+    .clinic-desc-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+    .clinic-desc-grid p {
+      font-size: 0.97rem;
+      color: var(--mid);
+      margin-bottom: 16px;
+      line-height: 1.8;
+    }
+
+    /* ── FEATURE CARDS ── */
+    .features-section { background: var(--tan); }
+    .feature-card {
+      background: var(--white);
+      border-top: 3px solid var(--red);
+      padding: 28px 24px;
+      border-radius: 2px;
+    }
+    .feature-card .f-icon { font-size: 1.8rem; margin-bottom: 14px; }
+    .feature-card h3 { font-size: 0.95rem; font-weight: bold; margin-bottom: 10px; }
+    .feature-card p { font-family: Arial, sans-serif; font-size: 0.85rem; color: var(--gray); line-height: 1.65; }
+
+    /* ── ROOMS STRIP ── */
+    .rooms-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+    }
+    .room-item { position: relative; overflow: hidden; }
+    .room-item img {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+    .room-item:hover img { transform: scale(1.04); }
+    .room-overlay {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      background: linear-gradient(transparent, rgba(0,0,0,0.65));
+      color: #fff;
+      padding: 24px 18px 16px;
+      font-family: Arial, sans-serif;
+      font-size: 0.82rem;
+      letter-spacing: 0.04em;
+    }
+
+    @media (max-width: 720px) {
+      .gallery-grid { grid-template-columns: 1fr; grid-template-rows: auto; }
+      .gallery-main { grid-row: auto; }
+      .gallery-side { flex-direction: row; }
+      .gallery-side img { aspect-ratio: 1; }
+      .clinic-desc-grid { grid-template-columns: 1fr; }
+      .rooms-strip { grid-template-columns: 1fr; }
+      .room-item img { aspect-ratio: 16/9; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a class="nav-logo" href="index.html">
+      <img src="logo.jpg" alt="Ander Acupuncture logo" />
+      <div class="nav-brand">
+        Ander Acupuncture
+        <span>&amp; Herbs</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="clinic.html" class="active">Clinic</a></li>
+      <li><a href="first-visit.html">First Visit</a></li>
+      <li><a href="testimonials.html">Reviews</a></li>
+      <li><a href="videos.html">Videos</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="index.html#contact" class="nav-cta">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <h1>Our Clinic</h1>
+    <p>A calm, welcoming space designed to help you slow down and heal.</p>
+  </div>
+
+  <!-- MAIN GALLERY -->
+  <div class="gallery-section">
+    <div class="gallery-grid">
+      <div class="gallery-main">
+        <img src="images/waiting-area.jpg" alt="Clinic waiting area" />
+      </div>
+      <div class="gallery-side">
+        <img src="images/treatment-room-1.jpg" alt="Treatment room" />
+        <img src="images/herb-cabinet.jpg" alt="Herb cabinet and office" />
+      </div>
+    </div>
+    <p class="gallery-caption">Ander Acupuncture &amp; Herbs — 1310 W. Stewart Dr., Suite 302, Orange, CA</p>
+  </div>
+
+  <!-- CLINIC DESCRIPTION -->
+  <section class="section clinic-desc">
+    <div class="section-inner">
+      <div class="clinic-desc-grid">
+        <div>
+          <p class="section-label">About the Space</p>
+          <h2 class="section-title">Simple, Clean, and Warm</h2>
+          <div class="section-divider"></div>
+          <p>From the moment you walk through the door, you'll notice that Ander Acupuncture and Herbs is different. The clinic is designed with simplicity, cleanliness, and warmth in mind — a space that feels calm the moment you arrive.</p>
+          <p>Subtle Chinese design elements, natural materials, and carefully chosen plants create an atmosphere that gently invites you to slow down. We believe the healing process begins before your treatment does.</p>
+        </div>
+        <div style="padding-top: 48px;">
+          <p>Every treatment room is private and quiet, allowing you to fully relax, unwind, and receive care without distraction. Dr. Li takes great care to ensure the environment reflects the respect and attention she gives to each patient.</p>
+          <p>The clinic is conveniently located in Orange, CA, with accessible parking and a comfortable waiting area stocked with calming teas and reading material.</p>
+          <p>We keep appointment schedules thoughtfully spaced so you are never rushed — your time with Dr. Li is yours fully.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROOM PHOTO STRIP -->
+  <div class="rooms-strip">
+    <div class="room-item">
+      <img src="images/treatment-room-1.jpg" alt="Treatment room 1" />
+      <div class="room-overlay">Treatment Room</div>
+    </div>
+    <div class="room-item">
+      <img src="images/treatment-room-2.jpg" alt="Treatment room 2" />
+      <div class="room-overlay">Private Treatment Suite</div>
+    </div>
+    <div class="room-item">
+      <img src="images/herb-cabinet.jpg" alt="Herb cabinet" />
+      <div class="room-overlay">Herbal Dispensary</div>
+    </div>
+  </div>
+
+  <!-- FEATURES -->
+  <section class="section features-section">
+    <div class="section-inner">
+      <p class="section-label">What to Expect</p>
+      <h2 class="section-title">Clinic Features</h2>
+      <div class="section-divider"></div>
+      <div class="grid-4">
+        <div class="feature-card">
+          <div class="f-icon">🔒</div>
+          <h3>Private Treatment Rooms</h3>
+          <p>All treatments take place in fully private, sound-dampened rooms to ensure your comfort and confidentiality.</p>
+        </div>
+        <div class="feature-card">
+          <div class="f-icon">🌿</div>
+          <h3>Herbal Dispensary On-Site</h3>
+          <p>Herbal formulas are prepared fresh and dispensed directly at the clinic for maximum potency and convenience.</p>
+        </div>
+        <div class="feature-card">
+          <div class="f-icon">🧹</div>
+          <h3>Clean &amp; Sterile</h3>
+          <p>All needles are single-use and sterile. The clinic is maintained to the highest standards of cleanliness.</p>
+        </div>
+        <div class="feature-card">
+          <div class="f-icon">🗣️</div>
+          <h3>Bilingual Care</h3>
+          <p>Services are available in both English and Mandarin Chinese — so you can always communicate comfortably.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCATION CTA -->
+  <section class="section" style="background:var(--white);">
+    <div class="section-inner" style="text-align:center;">
+      <p class="section-label">Find Us</p>
+      <h2 class="section-title">Visit the Clinic</h2>
+      <div class="section-divider" style="margin:0 auto 32px;"></div>
+      <div style="background:var(--tan);border:1px solid var(--border);height:220px;display:flex;align-items:center;justify-content:center;border-radius:2px;margin-bottom:32px;font-family:Arial,sans-serif;color:var(--gray);">
+        📍 1310 W. Stewart Dr., Suite 302, Orange, CA 92868<br>
+        <small style="display:block;margin-top:6px;">[Google Maps embed goes here]</small>
+      </div>
+      <p style="font-family:Arial,sans-serif;font-size:0.9rem;color:var(--gray);margin-bottom:24px;">
+        <strong style="color:var(--dark);">Address:</strong> 1310 W. Stewart Dr., Suite 302, Orange, CA 92868 &nbsp;|&nbsp;
+        <strong style="color:var(--dark);">Phone:</strong> <a href="tel:6572210331" style="color:var(--red);text-decoration:none;">(657) 221-0331</a>
+      </p>
+      <a href="index.html#contact" class="btn btn-red">Book an Appointment</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">Ander Acupuncture and Herbs</div>
+        <p class="footer-tagline">Combining the wisdom of Traditional Chinese Medicine with decades of Western medical experience.</p>
+        <span class="footer-lang">English &nbsp;|&nbsp; 中文</span>
+      </div>
+      <div class="footer-col">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Dr. Li</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="clinic.html">Clinic</a></li>
+          <li><a href="first-visit.html">First Visit</a></li>
+          <li><a href="testimonials.html">Reviews</a></li>
+      <li><a href="videos.html">Videos</a></li>
+      <li><a href="blog.html">Blog</a></li>
+          <li><a href="news.html">News</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>
+          1310 W. Stewart Dr.<br>Suite 302<br>Orange, CA 92868<br><br>
+          <a href="tel:6572210331">(657) 221-0331</a><br>
+          <a href="mailto:annieqqpp@gmail.com">annieqqpp@gmail.com</a>
+        </p>
+      </div>
+    </div>
+    <p class="footer-disclaimer">
+      The content on this website is for educational and informational purposes only and is not intended to replace the advice, diagnosis, or treatment of a licensed medical professional.
+    </p>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Ander Acupuncture and Herbs. All rights reserved.</span>
+      <span>1310 W. Stewart Dr., Suite 302, Orange, CA 92868</span>
+    </div>
+  </footer>
+
+</body>
+</html>

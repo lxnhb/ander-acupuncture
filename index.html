@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ander Acupuncture and Herbs | Orange, CA</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ── HOME HERO ── */
+    .home-hero {
+      background: linear-gradient(135deg, #3D0E0E 0%, #6B1515 50%, #8C1C1C 100%);
+      color: #fff;
+      padding: 110px 5% 100px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .home-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .hero-content {
+      position: relative;
+      max-width: 740px;
+      margin: 0 auto;
+    }
+    .hero-tag {
+      display: inline-block;
+      font-family: Arial, sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 20px;
+    }
+    .home-hero h1 {
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      font-weight: normal;
+      line-height: 1.25;
+      margin-bottom: 22px;
+    }
+    .home-hero .hero-sub {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.78);
+      max-width: 580px;
+      margin: 0 auto 14px;
+      font-family: Arial, sans-serif;
+      line-height: 1.7;
+    }
+    .hero-langs {
+      font-family: Arial, sans-serif;
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 36px;
+    }
+    .hero-langs span {
+      border: 1px solid rgba(255,255,255,0.25);
+      padding: 3px 12px;
+      border-radius: 20px;
+      margin: 0 4px;
+    }
+    .hero-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+    /* ── HIGHLIGHTS ── */
+    .highlights {
+      background: var(--tan);
+      padding: 60px 5%;
+    }
+    .highlights .section-inner {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+    }
+    .highlight-card {
+      background: var(--white);
+      border-top: 3px solid var(--red);
+      padding: 28px 22px;
+      border-radius: 2px;
+    }
+    .highlight-card .hl-icon { font-size: 1.8rem; margin-bottom: 12px; }
+    .highlight-card h3 { font-size: 0.97rem; font-weight: bold; margin-bottom: 8px; }
+    .highlight-card p { font-family: Arial, sans-serif; font-size: 0.86rem; color: var(--gray); line-height: 1.65; }
+
+    /* ── ABOUT TEASER ── */
+    .about-teaser { background: var(--white); }
+    .about-teaser-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.8fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .about-photo {
+      position: relative;
+    }
+    .about-photo img {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      border-radius: 2px;
+    }
+    .about-photo-badge {
+      position: absolute;
+      bottom: -16px;
+      right: -16px;
+      background: var(--red);
+      color: #fff;
+      padding: 16px 20px;
+      font-family: Arial, sans-serif;
+      font-size: 0.78rem;
+      line-height: 1.5;
+      text-align: center;
+      border-radius: 2px;
+    }
+    .about-photo-badge strong { display: block; font-size: 1.6rem; line-height: 1; }
+    .about-text p { font-size: 0.97rem; color: var(--mid); margin-bottom: 16px; }
+    .credentials-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 20px 0 28px;
+    }
+    .cred-tag {
+      background: var(--tan);
+      font-family: Arial, sans-serif;
+      font-size: 0.75rem;
+      color: var(--mid);
+      padding: 5px 12px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+    }
+
+    /* ── TREATMENTS OFFERED ── */
+    .treatments { background: var(--tan); }
+    .treatment-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 18px;
+    }
+    .treatment-card {
+      background: var(--white);
+      border-radius: 2px;
+      padding: 28px 20px;
+      text-align: center;
+      border-bottom: 3px solid var(--red);
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .treatment-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.08); transform: translateY(-2px); }
+    .treatment-card .t-icon { font-size: 2rem; margin-bottom: 12px; }
+    .treatment-card h3 { font-size: 0.92rem; font-weight: bold; color: var(--dark); margin-bottom: 8px; }
+    .treatment-card p { font-family: Arial, sans-serif; font-size: 0.8rem; color: var(--gray); line-height: 1.6; }
+
+    /* ── SERVICES TEASER ── */
+    .services-teaser { background: var(--cream); }
+    .service-cat-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--red);
+      padding: 24px 20px;
+      border-radius: 2px;
+      transition: box-shadow 0.2s;
+    }
+    .service-cat-card:hover { box-shadow: 0 2px 14px rgba(0,0,0,0.07); }
+    .service-cat-card h3 { font-size: 0.92rem; font-weight: bold; margin-bottom: 10px; color: var(--dark); }
+    .service-cat-card p { font-family: Arial, sans-serif; font-size: 0.82rem; color: var(--gray); line-height: 1.65; }
+
+    /* ── CLINIC TEASER ── */
+    .clinic-teaser { background: var(--dark); color: #fff; }
+    .clinic-teaser-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .clinic-img-pair {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .clinic-img-pair img {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      border-radius: 2px;
+    }
+    .clinic-img-pair img:first-child {
+      grid-column: 1 / -1;
+      aspect-ratio: 16/9;
+    }
+    .clinic-text .section-label { color: rgba(255,255,255,0.5); }
+    .clinic-text .section-title { color: #fff; }
+    .clinic-text .section-divider { background: rgba(255,255,255,0.3); }
+    .clinic-text p { color: rgba(255,255,255,0.72); font-size: 0.97rem; margin-bottom: 16px; }
+
+    /* ── FIRST VISIT TEASER ── */
+    .first-visit-teaser { background: var(--white); }
+    .steps-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 28px; }
+    .step-card { text-align: center; padding: 8px; }
+    .step-number {
+      width: 52px; height: 52px;
+      border: 2px solid var(--red);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem; color: var(--red); font-weight: bold;
+      margin: 0 auto 18px;
+    }
+    .step-card h3 { font-size: 1rem; margin-bottom: 10px; color: var(--dark); }
+    .step-card p { font-family: Arial, sans-serif; font-size: 0.86rem; color: var(--gray); line-height: 1.65; }
+    .step-connector { display: none; }
+
+    /* ── CONTACT SECTION ── */
+    .contact-section { background: var(--tan); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: 60px; }
+    .contact-info-col h3 { font-size: 1rem; font-weight: bold; margin-bottom: 24px; }
+    .hours-table { width: 100%; border-collapse: collapse; margin-top: 6px; }
+    .hours-table td {
+      font-family: Arial, sans-serif;
+      font-size: 0.84rem;
+      color: var(--gray);
+      padding: 5px 0;
+    }
+    .hours-table td:first-child { color: var(--dark); width: 55%; }
+    .map-box {
+      background: var(--border);
+      height: 160px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: Arial, sans-serif;
+      font-size: 0.82rem;
+      color: var(--gray);
+      margin-top: 24px;
+      border-radius: 2px;
+      text-align: center;
+    }
+    .contact-form-col h3 { font-size: 1rem; font-weight: bold; margin-bottom: 24px; }
+
+    /* ── TESTIMONIALS ── */
+    .testimonials-section { background: var(--tan); }
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      align-items: start;
+    }
+    .testimonial-card {
+      background: var(--white);
+      border-radius: 8px;
+      padding: 28px 24px;
+      border-top: 3px solid var(--red);
+      box-shadow: 0 1px 6px rgba(0,0,0,0.05);
+    }
+    .testimonial-quote {
+      font-size: 4rem;
+      color: var(--red);
+      opacity: 0.15;
+      line-height: 0.8;
+      margin-bottom: 14px;
+      font-family: Georgia, serif;
+    }
+    .t-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .t-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--red);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: Arial, sans-serif;
+      font-size: 0.8rem;
+      font-weight: bold;
+      flex-shrink: 0;
+    }
+    .t-name { font-size: 0.92rem; font-weight: bold; color: var(--dark); margin-bottom: 3px; }
+    .t-stars { color: #D4A017; font-size: 0.85rem; letter-spacing: 1px; }
+    .testimonial-text {
+      font-family: Arial, sans-serif;
+      font-size: 0.88rem;
+      color: var(--mid);
+      line-height: 1.78;
+    }
+
+    @media (max-width: 800px) {
+      .about-teaser-grid,
+      .clinic-teaser-grid,
+      .contact-grid,
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .steps-grid { grid-template-columns: 1fr; }
+      .about-photo { max-width: 320px; }
+      .about-photo-badge { bottom: 0; right: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a class="nav-logo" href="index.html">
+      <img src="logo.jpg" alt="Ander Acupuncture logo" />
+      <div class="nav-brand">
+        Ander Acupuncture
+        <span>&amp; Herbs</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="clinic.html">Clinic</a></li>
+      <li><a href="first-visit.html">First Visit</a></li>
+      <li><a href="testimonials.html">Reviews</a></li>
+      <li><a href="videos.html">Videos</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="index.html#contact" class="nav-cta">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="home-hero">
+    <div class="hero-content">
+      <span class="hero-tag">Traditional Chinese Medicine · Orange, CA</span>
+      <h1>A Place Where Women Feel<br>Safe, Cared For, and Understood</h1>
+      <p class="hero-sub">Over 20 years of experience blending OB/GYN expertise with Traditional Chinese Medicine to support women through every stage of life.</p>
+      <div class="hero-langs">
+        <span>English</span>
+        <span>中文</span>
+      </div>
+      <div class="hero-btns">
+        <a href="index.html#contact" class="btn btn-primary">Book Appointment</a>
+        <a href="services.html" class="btn" style="color:#fff;border-color:rgba(255,255,255,0.4);">View Services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- HIGHLIGHTS -->
+  <div class="highlights">
+    <div class="section-inner">
+      <div class="highlight-card">
+        <div class="hl-icon">🎓</div>
+        <h3>Dual Medical Training</h3>
+        <p>Uniquely trained in both Western medicine and Traditional Chinese Medicine for comprehensive care.</p>
+      </div>
+      <div class="highlight-card">
+        <div class="hl-icon">🌿</div>
+        <h3>Root-Cause Healing</h3>
+        <p>Personalized plans that address the underlying cause — not just the symptoms.</p>
+      </div>
+      <div class="highlight-card">
+        <div class="hl-icon">💛</div>
+        <h3>Women's Health Focus</h3>
+        <p>Specializing in menstrual health, fertility, menopause, and lifelong women's wellness.</p>
+      </div>
+      <div class="highlight-card">
+        <div class="hl-icon">🗣️</div>
+        <h3>English &amp; Chinese</h3>
+        <p>Services available in both English and Mandarin Chinese for your comfort.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT TEASER -->
+  <section class="section about-teaser">
+    <div class="section-inner">
+      <div class="about-teaser-grid">
+        <div class="about-photo">
+          <img src="images/dr-li-main.jpeg" alt="Dr. He (Annie) Li in consultation" />
+          <div class="about-photo-badge">
+            <strong>20+</strong>
+            Years of<br>Healthcare Experience
+          </div>
+        </div>
+        <div class="about-text">
+          <p class="section-label">About the Practitioner</p>
+          <h2 class="section-title">Dr. He (Annie) Li<br><span style="font-size:0.8em;color:var(--gray);">DAIM, L.Ac.</span></h2>
+          <div class="section-divider"></div>
+          <p>Dr. He (Annie) Li is a California Licensed Acupuncturist and Doctor of Acupuncture and Integrative Medicine. Her unique background combines over ten years practicing as a physician in a leading OB/GYN hospital in China with advanced training in Traditional Chinese Medicine.</p>
+          <p>She believes true health is not just about normal physical indicators, but about the holistic balance of emotions, lifestyle, and physical wellbeing. She takes the time to listen, understand, and create a plan built around you — never a one-size-fits-all approach.</p>
+          <div class="credentials-row">
+            <span class="cred-tag">DAIM, L.Ac.</span>
+            <span class="cred-tag">M.S. Traditional Asian Medicine</span>
+            <span class="cred-tag">UCI Medical Center</span>
+            <span class="cred-tag">Dalian University</span>
+          </div>
+          <a href="about.html" class="btn btn-outline">Read Full Bio</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TREATMENTS OFFERED -->
+  <section class="section treatments">
+    <div class="section-inner">
+      <p class="section-label">What We Offer</p>
+      <h2 class="section-title">Treatment Modalities</h2>
+      <div class="section-divider"></div>
+      <div class="treatment-cards">
+        <div class="treatment-card">
+          <div class="t-icon">🪡</div>
+          <h3>Acupuncture</h3>
+          <p>Fine needles placed at precise points to restore the body's natural energy flow and promote healing.</p>
+        </div>
+        <div class="treatment-card">
+          <div class="t-icon">🌿</div>
+          <h3>Chinese Herbal Formulas</h3>
+          <p>Custom-compounded herbal prescriptions tailored to your specific pattern and constitution.</p>
+        </div>
+        <div class="treatment-card">
+          <div class="t-icon">🔵</div>
+          <h3>Cupping &amp; Moxibustion</h3>
+          <p>Ancient therapies using suction and heat to improve circulation and relieve tension.</p>
+        </div>
+        <div class="treatment-card">
+          <div class="t-icon">✋</div>
+          <h3>Meridian Bodywork</h3>
+          <p>Therapeutic massage along meridian pathways to release blockages and ease discomfort.</p>
+        </div>
+        <div class="treatment-card">
+          <div class="t-icon">🥗</div>
+          <h3>Medicinal Diet Guidance</h3>
+          <p>Personalized dietary recommendations using food as medicine, rooted in TCM principles.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES TEASER -->
+  <section class="section services-teaser">
+    <div class="section-inner">
+      <p class="section-label">Conditions We Treat</p>
+      <h2 class="section-title">Areas of Specialty</h2>
+      <div class="section-divider"></div>
+      <div class="grid-3" style="margin-bottom:36px;">
+        <div class="service-cat-card">
+          <h3>Women's Health &amp; Hormones</h3>
+          <p>Irregular periods, painful periods, PCOS, PMS, mood swings, flow issues, and breast tenderness.</p>
+        </div>
+        <div class="service-cat-card">
+          <h3>Fertility &amp; Infertility Support</h3>
+          <p>Natural conception, IVF preparation and recovery, uterine health, egg quality, and post-miscarriage care.</p>
+        </div>
+        <div class="service-cat-card">
+          <h3>Menopause Support</h3>
+          <p>Hot flashes, night sweats, sleep disturbances, mood changes, fatigue, weight management, and bone density.</p>
+        </div>
+        <div class="service-cat-card">
+          <h3>Pain Management</h3>
+          <p>Neck, shoulder, and back pain, sciatica, headaches, migraines, chronic fatigue, and postpartum recovery.</p>
+        </div>
+        <div class="service-cat-card">
+          <h3>Digestive, Sleep &amp; Wellness</h3>
+          <p>Bloating, stomach issues, constipation, diarrhea, poor appetite, insomnia, low immunity, and frequent illness.</p>
+        </div>
+        <div class="service-cat-card">
+          <h3>Weight, Beauty &amp; Constitution</h3>
+          <p>Weight management, traditional beauty therapy, complexion improvement, and personal constitution assessment.</p>
+        </div>
+      </div>
+      <div style="text-align:center;">
+        <a href="services.html" class="btn btn-red">View All Services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="section testimonials-section">
+    <div class="section-inner">
+      <p class="section-label">Patient Stories</p>
+      <h2 class="section-title">What Our Patients Say</h2>
+      <div class="section-divider"></div>
+      <div class="testimonials-grid">
+
+        <div class="testimonial-card">
+          <div class="testimonial-quote">"</div>
+          <div class="t-header">
+            <div class="t-avatar">AP</div>
+            <div>
+              <div class="t-name">Ana Patricia</div>
+              <div class="t-stars">★★★★★</div>
+            </div>
+          </div>
+          <p class="testimonial-text">Dr. Annie started treating me not too long ago, and the difference has been incredible. Before seeing her, I was in severe pain and could barely move my shoulders or neck. She made me feel completely at ease and was so gentle throughout the entire process. She also provided personalized herbal remedies to support my healing at home, which has made a huge difference. I highly recommend Dr. Annie to anyone looking for a doctor who truly cares.</p>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-quote">"</div>
+          <div class="t-header">
+            <div class="t-avatar">OF</div>
+            <div>
+              <div class="t-name">Orly Frank</div>
+              <div class="t-stars">★★★★★</div>
+            </div>
+          </div>
+          <p class="testimonial-text">Dr. Annie Li is a miracle worker and an angel on earth. Her breadth of knowledge coupled with her extraordinary kindness and true desire to help those suffering is unique in this world. I cannot say enough about the ways in which Dr. Li has helped me over the last few years. I drive many hours from Ventura County to see her in Orange County. If a person is fortunate enough to meet just one individual like Dr. Li in their lifetime, one would be truly blessed.</p>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-quote">"</div>
+          <div class="t-header">
+            <div class="t-avatar">AU</div>
+            <div>
+              <div class="t-name">Amabel U</div>
+              <div class="t-stars">★★★★★</div>
+            </div>
+          </div>
+          <p class="testimonial-text">So fortunate to have found Dr. He Li. Been in treatment for 3 months due to pain in my spinal area and leg — Western medicine had failed to work. Within 2–3 acupuncture sessions, pain subsided significantly. She listened to my concerns with such compassion and knew exactly where to place these tiny needles. She is an amazing practitioner; I am full of gratitude.</p>
+        </div>
+
+      </div>
+      <div style="text-align:center;margin-top:36px;">
+        <a href="testimonials.html" class="btn btn-red">Read All Patient Reviews</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLINIC TEASER -->
+  <section class="section clinic-teaser">
+    <div class="section-inner">
+      <div class="clinic-teaser-grid">
+        <div class="clinic-img-pair">
+          <img src="images/waiting-area.jpg" alt="Clinic waiting area" />
+          <img src="images/treatment-room-1.jpg" alt="Treatment room" />
+          <img src="images/herb-cabinet.jpg" alt="Herb cabinet" />
+        </div>
+        <div class="clinic-text">
+          <p class="section-label">Our Space</p>
+          <h2 class="section-title">A Calm,<br>Welcoming Environment</h2>
+          <div class="section-divider"></div>
+          <p>The clinic is designed with simplicity, cleanliness, and warmth in mind — incorporating subtle Chinese elements and calming greenery to help you slow down and feel at ease from the moment you arrive.</p>
+          <p>Every treatment room is private, quiet, and thoughtfully prepared so you can fully relax and receive care.</p>
+          <a href="clinic.html" class="btn btn-primary" style="margin-top:8px;">See the Clinic</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FIRST VISIT TEASER -->
+  <section class="section first-visit-teaser">
+    <div class="section-inner">
+      <p class="section-label">New Patients</p>
+      <h2 class="section-title">What to Expect on Your First Visit</h2>
+      <div class="section-divider"></div>
+      <div class="steps-grid" style="margin-bottom:36px;">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <h3>Detailed Consultation</h3>
+          <p>Dr. Li discusses your concerns, medical history, lifestyle, diet, and emotional wellbeing — taking as much time as you need.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <h3>Personalized Treatment Plan</h3>
+          <p>A tailored plan combining acupuncture frequency, herbal therapy, dietary adjustments, and home practices.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <h3>Gentle, Sustainable Healing</h3>
+          <p>Treatment unfolds gradually over weeks to months, with regular check-ins and adjustments based on your response.</p>
+        </div>
+      </div>
+      <div style="text-align:center;">
+        <a href="first-visit.html" class="btn btn-outline">Learn More About Your First Visit</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section contact-section" id="contact">
+    <div class="section-inner">
+      <p class="section-label">Get in Touch</p>
+      <h2 class="section-title">Contact &amp; Location</h2>
+      <div class="section-divider"></div>
+      <div class="contact-grid">
+
+        <div class="contact-info-col">
+          <h3>Clinic Information</h3>
+          <div class="info-row">
+            <div class="info-icon">📍</div>
+            <div class="info-text">
+              <strong>Address</strong>
+              1310 W. Stewart Dr., Suite 302<br>Orange, CA 92868
+            </div>
+          </div>
+          <div class="info-row">
+            <div class="info-icon">📞</div>
+            <div class="info-text">
+              <strong>Phone</strong>
+              <a href="tel:6572210331">(657) 221-0331</a>
+            </div>
+          </div>
+          <div class="info-row">
+            <div class="info-icon">✉️</div>
+            <div class="info-text">
+              <strong>Email</strong>
+              <a href="mailto:annieqqpp@gmail.com">annieqqpp@gmail.com</a>
+            </div>
+          </div>
+          <div class="info-row">
+            <div class="info-icon">🕐</div>
+            <div class="info-text">
+              <strong>Business Hours</strong>
+              <table class="hours-table">
+                <tr><td>Monday – Friday</td><td>9:30 am – 6:00 pm</td></tr>
+                <tr><td>Saturday</td><td>By appointment</td></tr>
+                <tr><td>Sunday</td><td>Closed</td></tr>
+              </table>
+            </div>
+          </div>
+          <div class="map-box">
+            📍 1310 W. Stewart Dr., Suite 302, Orange CA<br>
+            <small style="display:block;margin-top:4px;">[Google Maps embed goes here]</small>
+          </div>
+        </div>
+
+        <div class="contact-form-col">
+          <h3>Send a Message</h3>
+          <form>
+            <div class="form-group">
+              <label>Your Name</label>
+              <input type="text" placeholder="Full name" />
+            </div>
+            <div class="form-group">
+              <label>Phone Number</label>
+              <input type="tel" placeholder="(000) 000-0000" />
+            </div>
+            <div class="form-group">
+              <label>Email</label>
+              <input type="email" placeholder="your@email.com" />
+            </div>
+            <div class="form-group">
+              <label>Preferred Language</label>
+              <select>
+                <option>English</option>
+                <option>Chinese (中文)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Reason for Visit</label>
+              <select>
+                <option value="">Select a condition...</option>
+                <option>Irregular Menstruation</option>
+                <option>Infertility / IVF Support</option>
+                <option>Period Pain</option>
+                <option>Menopause Support</option>
+                <option>Pain Management</option>
+                <option>Digestive Issues</option>
+                <option>Insomnia</option>
+                <option>Weight &amp; Wellness</option>
+                <option>Post COVID-19 Syndrome</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Message</label>
+              <textarea placeholder="Tell us about your health concerns or questions..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-red" style="width:100%;padding:13px;">Send Message</button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">Ander Acupuncture and Herbs</div>
+        <p class="footer-tagline">Combining the wisdom of Traditional Chinese Medicine with decades of Western medical experience to help you heal from the inside out.</p>
+        <span class="footer-lang">English &nbsp;|&nbsp; 中文</span>
+      </div>
+      <div class="footer-col">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Dr. Li</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="clinic.html">Clinic</a></li>
+          <li><a href="first-visit.html">First Visit</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="news.html">News</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>
+          1310 W. Stewart Dr.<br>Suite 302<br>Orange, CA 92868<br><br>
+          <a href="tel:6572210331">(657) 221-0331</a><br>
+          <a href="mailto:annieqqpp@gmail.com">annieqqpp@gmail.com</a>
+        </p>
+      </div>
+    </div>
+    <p class="footer-disclaimer">
+      The content on this website is for educational and informational purposes only and is not intended to replace the advice, diagnosis, or treatment of a licensed medical professional. If you are experiencing a medical emergency, please call 911 or seek immediate care.
+    </p>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Ander Acupuncture and Herbs. All rights reserved.</span>
+      <span>1310 W. Stewart Dr., Suite 302, Orange, CA 92868</span>
+    </div>
+  </footer>
+
+</body>
+</html>

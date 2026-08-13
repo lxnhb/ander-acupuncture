@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Dr. Li | Ander Acupuncture and Herbs</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ── BIO LAYOUT ── */
+    .bio-section { background: var(--white); }
+    .bio-grid {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    /* Sidebar */
+    .bio-sidebar { position: sticky; top: 88px; }
+    .bio-photo {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      border-radius: 2px;
+      margin-bottom: 20px;
+    }
+    .bio-name {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: var(--dark);
+      margin-bottom: 4px;
+    }
+    .bio-title {
+      font-family: Arial, sans-serif;
+      font-size: 0.8rem;
+      color: var(--red);
+      letter-spacing: 0.06em;
+      margin-bottom: 20px;
+    }
+    .cred-list { list-style: none; margin-bottom: 24px; }
+    .cred-list li {
+      font-family: Arial, sans-serif;
+      font-size: 0.84rem;
+      color: var(--mid);
+      padding: 8px 0;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+    .cred-list li:first-child { border-top: 1px solid var(--border); }
+    .cred-list li::before { content: '—'; color: var(--red); flex-shrink: 0; }
+
+    /* Bio text */
+    .bio-text p {
+      font-size: 0.97rem;
+      color: var(--mid);
+      line-height: 1.85;
+      margin-bottom: 20px;
+    }
+    .bio-text h3 {
+      font-size: 1.1rem;
+      font-weight: normal;
+      color: var(--dark);
+      margin: 32px 0 14px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+    }
+
+    /* Pull quote */
+    .pull-quote {
+      border-left: 4px solid var(--red);
+      margin: 28px 0;
+      padding: 16px 24px;
+      background: var(--tan);
+      border-radius: 0 2px 2px 0;
+    }
+    .pull-quote p {
+      font-style: italic;
+      font-size: 1.05rem !important;
+      color: var(--dark) !important;
+      margin: 0 !important;
+    }
+
+    /* ── PHILOSOPHY ── */
+    .philosophy-section { background: var(--tan); }
+    .philosophy-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 22px;
+    }
+    .philosophy-card {
+      background: var(--white);
+      border-top: 3px solid var(--red);
+      padding: 26px 22px;
+      border-radius: 2px;
+    }
+    .philosophy-card .p-icon { font-size: 1.7rem; margin-bottom: 12px; }
+    .philosophy-card h3 { font-size: 0.95rem; font-weight: bold; margin-bottom: 10px; }
+    .philosophy-card p { font-family: Arial, sans-serif; font-size: 0.85rem; color: var(--gray); line-height: 1.65; }
+
+    @media (max-width: 760px) {
+      .bio-grid { grid-template-columns: 1fr; }
+      .bio-sidebar { position: static; }
+      .bio-photo { max-height: 420px; aspect-ratio: auto; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a class="nav-logo" href="index.html">
+      <img src="logo.jpg" alt="Ander Acupuncture logo" />
+      <div class="nav-brand">
+        Ander Acupuncture
+        <span>&amp; Herbs</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="clinic.html">Clinic</a></li>
+      <li><a href="first-visit.html">First Visit</a></li>
+      <li><a href="testimonials.html">Reviews</a></li>
+      <li><a href="videos.html">Videos</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="index.html#contact" class="nav-cta">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <h1>About Dr. He (Annie) Li</h1>
+    <p>Two decades of healthcare experience, bridging Eastern and Western medicine.</p>
+  </div>
+
+  <!-- BIO -->
+  <section class="section bio-section">
+    <div class="section-inner">
+      <div class="bio-grid">
+
+        <!-- SIDEBAR -->
+        <div class="bio-sidebar">
+          <img class="bio-photo" src="images/dr-li-main.jpeg" alt="Dr. He (Annie) Li" />
+          <div class="bio-name">Dr. He (Annie) Li</div>
+          <div class="bio-title">DAIM, L.Ac.</div>
+          <ul class="cred-list">
+            <li>California Licensed Acupuncturist</li>
+            <li>Doctor of Acupuncture &amp; Integrative Medicine (DAIM)</li>
+            <li>M.S. in Traditional Asian Medicine</li>
+            <li>B.S. in Medicine — Dalian University, China</li>
+            <li>Principal Ultrasound Technician, UCI Medical Center</li>
+            <li>Integrative Medicine Resident, AHMC Medical Group (2024–2025)</li>
+            <li>10+ Years OB/GYN Physician Experience (China)</li>
+            <li>20+ Years Total Healthcare Experience</li>
+            <li>Services in English &amp; Mandarin Chinese</li>
+          </ul>
+          <a href="index.html#contact" class="btn btn-red" style="display:block;text-align:center;">Book an Appointment</a>
+        </div>
+
+        <!-- BIO TEXT -->
+        <div class="bio-text">
+          <p class="section-label">Biography</p>
+          <h2 class="section-title">A Practitioner Who Listens</h2>
+          <div class="section-divider"></div>
+
+          <p>Dr. He (Annie) Li is a California Licensed Acupuncturist and Doctor of Acupuncture and Integrative Medicine with more than two decades of healthcare experience. Her unique background combines extensive training in both Western medicine and Traditional Chinese Medicine, allowing her to provide comprehensive, patient-centered care that addresses the root causes of illness while supporting overall wellness.</p>
+
+          <div class="pull-quote">
+            <p>"True health is not just about normal physical indicators — it's about the holistic balance of emotions, lifestyle, and the body working in harmony."</p>
+          </div>
+
+          <h3>A Decade in OB/GYN Medicine</h3>
+          <p>After earning her Bachelor of Science in Medicine from Dalian University, Dr. Li practiced as a physician at a leading OB/GYN hospital in China for over ten years. During that time, she specialized in women's health conditions including hormonal imbalances, gynecological disorders, and reproductive health concerns — developing a deep clinical expertise in the conditions that affect women throughout their lives.</p>
+
+          <h3>Building a Career in the United States</h3>
+          <p>Dr. Li later continued her medical career in the United States, becoming a highly credentialed ultrasound specialist. She currently serves as a Principal Ultrasound Technician at UCI Medical Center, where she brings her diagnostic expertise to one of Southern California's leading healthcare institutions.</p>
+
+          <h3>The Turn Toward Holistic Medicine</h3>
+          <p>Driven by her passion for holistic healing and a deep respect for the wisdom of Traditional Chinese Medicine, Dr. Li pursued advanced studies in TCM — earning both a Master of Science in Traditional Asian Medicine and a Doctorate in Acupuncture and Integrative Medicine from Alhambra Medical University.</p>
+          <p>Since becoming a licensed acupuncturist, she has helped patients find relief from a wide range of conditions, including chronic pain, stress and anxiety, digestive disorders, infertility, women's health concerns, and overall wellness challenges.</p>
+
+          <h3>Her Approach to Patient Care</h3>
+          <p>Dr. Li believes that effective healthcare begins with listening. She takes the time to understand each patient's unique health history, lifestyle, and goals — creating personalized treatment plans that combine the wisdom of Traditional Chinese Medicine with her extensive clinical experience.</p>
+          <p>Rather than applying one-size-fits-all protocols, she examines how your emotions, diet, sleep, stress, and family dynamics all interact. Her treatment plans reflect this whole-person perspective, integrating acupuncture, herbal medicine, lifestyle guidance, and dietary recommendations into a cohesive, sustainable approach.</p>
+          <p>Her compassionate approach, attention to detail, and commitment to patient education have earned the trust of patients throughout Southern California.</p>
+
+          <h3>Integrative Medicine Residency</h3>
+          <p>From August 2024 to August 2025, Dr. Li completed an Integrative Medicine Residency at AHMC Medical Group — deepening her expertise in blending conventional Western medicine with evidence-based complementary and alternative therapies. This residency further strengthened her ability to treat complex cases by drawing on the full spectrum of both Eastern and Western clinical knowledge.</p>
+
+          <h3>Language &amp; Accessibility</h3>
+          <p>Dr. Li offers consultations and treatment in both English and Mandarin Chinese, making her care accessible to a broader community. Whether patients are seeking pain relief, improved balance and vitality, support for fertility and women's health, or a natural approach to long-term wellness, Dr. Li is dedicated to helping them achieve lasting results and a healthier quality of life.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- DR. LI IN CLINIC — CINEMATIC STRIP -->
+  <div style="position:relative;overflow:hidden;max-height:440px;">
+    <img src="images/dr-li-clinic.png" alt="Dr. He (Annie) Li — Acupuncturist & TCM Practitioner"
+      style="width:100%;height:440px;object-fit:cover;object-position:center 30%;display:block;" />
+    <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(0,0,0,0.45) 0%,transparent 60%);"></div>
+    <div style="position:absolute;bottom:36px;left:5%;color:#fff;">
+      <div style="font-family:Arial,sans-serif;font-size:0.7rem;letter-spacing:0.22em;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:8px;">Ander Acupuncture &amp; Herbs · Orange, CA</div>
+      <div style="font-family:Georgia,serif;font-size:1.8rem;font-weight:normal;line-height:1.2;margin-bottom:6px;">Dr. He (Annie) Li</div>
+      <div style="font-family:Arial,sans-serif;font-size:0.85rem;color:rgba(255,255,255,0.75);">Acupuncturist &nbsp;/&nbsp; TCM Practitioner &nbsp;/&nbsp; DAIM, L.Ac.</div>
+    </div>
+  </div>
+
+  <!-- PHILOSOPHY -->
+  <section class="section philosophy-section">
+    <div class="section-inner">
+      <p class="section-label">Core Philosophy</p>
+      <h2 class="section-title">How Dr. Li Approaches Care</h2>
+      <div class="section-divider"></div>
+      <div class="philosophy-grid">
+        <div class="philosophy-card">
+          <div class="p-icon">👂</div>
+          <h3>Listen First</h3>
+          <p>Every consultation begins with deep listening — to your story, your symptoms, and the life circumstances that shape your health.</p>
+        </div>
+        <div class="philosophy-card">
+          <div class="p-icon">🎯</div>
+          <h3>Treat the Root</h3>
+          <p>Symptoms are signals. Dr. Li looks beyond the surface to understand and address what's actually causing your condition.</p>
+        </div>
+        <div class="philosophy-card">
+          <div class="p-icon">🧩</div>
+          <h3>Personalize Everything</h3>
+          <p>No two patients receive the same plan. Your constitution, lifestyle, and goals shape every aspect of your treatment.</p>
+        </div>
+        <div class="philosophy-card">
+          <div class="p-icon">🌱</div>
+          <h3>Heal Sustainably</h3>
+          <p>True healing takes time. Dr. Li supports you through a gradual, lasting process — not a quick fix that fades.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section" style="background:var(--white);text-align:center;">
+    <div class="section-inner">
+      <p class="section-label">Ready to Begin?</p>
+      <h2 class="section-title">Schedule a Consultation with Dr. Li</h2>
+      <div class="section-divider" style="margin:0 auto 24px;"></div>
+      <p style="font-family:Arial,sans-serif;font-size:0.95rem;color:var(--gray);margin-bottom:28px;max-width:520px;margin-left:auto;margin-right:auto;">Dr. Li accepts patients by appointment. Reach out by phone, email, or the contact form and we'll get back to you promptly.</p>
+      <a href="index.html#contact" class="btn btn-red" style="margin-right:12px;">Contact Us</a>
+      <a href="services.html" class="btn btn-outline">View Services</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">Ander Acupuncture and Herbs</div>
+        <p class="footer-tagline">Combining the wisdom of Traditional Chinese Medicine with decades of Western medical experience.</p>
+        <span class="footer-lang">English &nbsp;|&nbsp; 中文</span>
+      </div>
+      <div class="footer-col">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Dr. Li</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="clinic.html">Clinic</a></li>
+          <li><a href="first-visit.html">First Visit</a></li>
+          <li><a href="testimonials.html">Reviews</a></li>
+      <li><a href="videos.html">Videos</a></li>
+      <li><a href="blog.html">Blog</a></li>
+          <li><a href="news.html">News</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>
+          1310 W. Stewart Dr.<br>Suite 302<br>Orange, CA 92868<br><br>
+          <a href="tel:6572210331">(657) 221-0331</a><br>
+          <a href="mailto:annieqqpp@gmail.com">annieqqpp@gmail.com</a>
+        </p>
+      </div>
+    </div>
+    <p class="footer-disclaimer">
+      The content on this website is for educational and informational purposes only and is not intended to replace the advice, diagnosis, or treatment of a licensed medical professional.
+    </p>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Ander Acupuncture and Herbs. All rights reserved.</span>
+      <span>1310 W. Stewart Dr., Suite 302, Orange, CA 92868</span>
+    </div>
+  </footer>
+
+</body>
+</html>

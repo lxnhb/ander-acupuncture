@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ander Acupuncture & Herbs — Clinic Flyer</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lato:wght@300;400;700&display=swap');
+
+    @page {
+      size: letter portrait;
+      margin: 0;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --red:    #8C1A1A;
+      --red2:   #6B1212;
+      --gold:   #C4973A;
+      --cream:  #FAF7F2;
+      --tan:    #F0E9DC;
+      --dark:   #1E1E1E;
+      --mid:    #4A4A4A;
+      --white:  #FFFFFF;
+    }
+
+    body {
+      background: #D0C8BE;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      padding: 32px 16px;
+      font-family: 'Lato', Arial, sans-serif;
+    }
+
+    /* ── FLYER CONTAINER ── */
+    .flyer {
+      width: 816px;          /* 8.5 in × 96 dpi */
+      min-height: 1056px;    /* 11 in × 96 dpi  */
+      background: var(--cream);
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.35);
+    }
+
+    /* ═══════════════════════════════════════════
+       HEADER
+    ═══════════════════════════════════════════ */
+    .header {
+      background: linear-gradient(160deg, #6B1212 0%, #8C1A1A 45%, #7A1616 100%);
+      padding: 36px 48px 30px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Subtle pattern overlay */
+    .header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(circle at 10% 20%, rgba(255,255,255,0.04) 0%, transparent 50%),
+        radial-gradient(circle at 90% 80%, rgba(255,255,255,0.04) 0%, transparent 50%);
+    }
+
+    /* Decorative corner lines */
+    .header::after {
+      content: '';
+      position: absolute;
+      top: 16px; right: 16px; bottom: 16px; left: 16px;
+      border: 1px solid rgba(255,255,255,0.12);
+      pointer-events: none;
+    }
+
+    .header-inner {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .header-logo {
+      width: 108px;
+      height: 108px;
+      object-fit: contain;
+      flex-shrink: 0;
+      filter: drop-shadow(0 2px 8px rgba(0,0,0,0.3));
+    }
+
+    .header-text { flex: 1; }
+
+    .header-label {
+      font-family: 'Lato', sans-serif;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 6px;
+    }
+
+    .header-clinic {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 36px;
+      font-weight: 700;
+      color: #FFFFFF;
+      line-height: 1.1;
+      letter-spacing: 0.01em;
+      margin-bottom: 8px;
+    }
+
+    .header-tagline {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 13.5px;
+      font-style: italic;
+      font-weight: 400;
+      color: rgba(255,255,255,0.78);
+      line-height: 1.5;
+      max-width: 420px;
+      margin-bottom: 14px;
+    }
+
+    .header-badges {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.22);
+      color: rgba(255,255,255,0.85);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 4px 11px;
+      border-radius: 20px;
+    }
+
+    .badge.gold {
+      background: rgba(196,151,58,0.25);
+      border-color: rgba(196,151,58,0.5);
+      color: #F0C96A;
+    }
+
+    /* ── GOLD RIBBON ── */
+    .ribbon {
+      background: var(--gold);
+      height: 4px;
+      position: relative;
+    }
+
+    /* ═══════════════════════════════════════════
+       SECTION DIVIDER
+    ═══════════════════════════════════════════ */
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 0 48px;
+      margin: 22px 0 18px;
+    }
+
+    .divider-line { flex: 1; height: 1px; background: #D5C9BB; }
+
+    .divider-icon {
+      color: var(--red);
+      font-size: 16px;
+      opacity: 0.7;
+    }
+
+    .divider-text {
+      font-size: 8.5px;
+      font-weight: 700;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--red);
+    }
+
+    /* ═══════════════════════════════════════════
+       BODY CONTENT
+    ═══════════════════════════════════════════ */
+    .body-content {
+      padding: 0 48px;
+    }
+
+    /* ── MAIN GRID ── */
+    .main-grid {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 36px;
+      align-items: start;
+    }
+
+    /* LEFT: Doctor card */
+    .doctor-card {
+      text-align: center;
+    }
+
+    .doctor-photo {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: 4px;
+      margin-bottom: 14px;
+      filter: sepia(10%) contrast(1.02);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.14);
+    }
+
+    .doctor-name {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 3px;
+    }
+
+    .doctor-creds {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: var(--red);
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .doctor-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      justify-content: center;
+      margin-bottom: 14px;
+    }
+
+    .pill {
+      background: var(--tan);
+      border: 1px solid #D5C9BB;
+      font-size: 8px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      color: var(--mid);
+      padding: 3px 8px;
+      border-radius: 20px;
+    }
+
+    .lang-note {
+      font-size: 9.5px;
+      color: var(--mid);
+      font-style: italic;
+      border-top: 1px solid #DDD5C8;
+      padding-top: 10px;
+      margin-top: 2px;
+    }
+
+    .lang-note strong {
+      color: var(--dark);
+      font-style: normal;
+    }
+
+    /* RIGHT: Info columns */
+    .info-col {}
+
+    .section-label {
+      font-size: 8.5px;
+      font-weight: 700;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 5px;
+    }
+
+    .section-heading {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--dark);
+      margin-bottom: 8px;
+      line-height: 1.2;
+    }
+
+    .section-text {
+      font-size: 10.5px;
+      color: var(--mid);
+      line-height: 1.75;
+      margin-bottom: 14px;
+    }
+
+    .red-line {
+      width: 36px;
+      height: 2px;
+      background: var(--red);
+      margin-bottom: 16px;
+    }
+
+    /* Services list */
+    .services-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 7px;
+      margin-bottom: 16px;
+    }
+
+    .service-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 7px;
+      font-size: 10px;
+      color: var(--dark);
+      line-height: 1.45;
+    }
+
+    .service-dot {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--red);
+      color: #fff;
+      font-size: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* Treatments row */
+    .treatments-row {
+      background: var(--red);
+      border-radius: 4px;
+      padding: 10px 14px;
+      margin-bottom: 0;
+    }
+
+    .treatments-label {
+      font-size: 8px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 6px;
+    }
+
+    .treatments-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .treatment-tag {
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.25);
+      color: #fff;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      padding: 3px 10px;
+      border-radius: 20px;
+    }
+
+    /* ═══════════════════════════════════════════
+       TESTIMONIAL STRIP
+    ═══════════════════════════════════════════ */
+    .testimonial-strip {
+      margin: 20px 48px 0;
+      background: var(--tan);
+      border-left: 4px solid var(--gold);
+      border-radius: 0 4px 4px 0;
+      padding: 14px 20px;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+
+    .t-quote-mark {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 52px;
+      color: var(--gold);
+      opacity: 0.5;
+      line-height: 0.7;
+      flex-shrink: 0;
+    }
+
+    .t-body {}
+
+    .t-text {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 11.5px;
+      font-style: italic;
+      color: var(--dark);
+      line-height: 1.65;
+      margin-bottom: 6px;
+    }
+
+    .t-author {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--mid);
+    }
+
+    .t-stars {
+      color: var(--gold);
+      font-size: 11px;
+      margin-left: 6px;
+    }
+
+    /* ═══════════════════════════════════════════
+       FOOTER / CONTACT
+    ═══════════════════════════════════════════ */
+    .contact-section {
+      background: linear-gradient(160deg, #6B1212 0%, #8C1A1A 100%);
+      margin-top: 22px;
+      padding: 22px 48px 18px;
+      position: relative;
+    }
+
+    .contact-section::before {
+      content: '';
+      position: absolute;
+      top: 10px; right: 10px; bottom: 10px; left: 10px;
+      border: 1px solid rgba(255,255,255,0.1);
+      pointer-events: none;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1px 1fr 1px 1fr;
+      gap: 0;
+      align-items: start;
+    }
+
+    .contact-divider-v {
+      width: 1px;
+      background: rgba(255,255,255,0.15);
+      align-self: stretch;
+      margin: 0 24px;
+    }
+
+    .contact-col {}
+
+    .contact-col-label {
+      font-size: 7.5px;
+      font-weight: 700;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .contact-col-label::before {
+      content: '';
+      display: block;
+      width: 16px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .contact-item {
+      font-size: 10.5px;
+      color: rgba(255,255,255,0.88);
+      line-height: 1.7;
+    }
+
+    .contact-item strong {
+      display: block;
+      font-weight: 700;
+    }
+
+    .hours-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 9.5px;
+      color: rgba(255,255,255,0.8);
+      line-height: 1.8;
+    }
+
+    .hours-row span:first-child { color: rgba(255,255,255,0.55); }
+
+    .cta-btn {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--dark);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 8px 18px;
+      border-radius: 2px;
+      text-decoration: none;
+      margin-top: 10px;
+    }
+
+    .footer-bottom-strip {
+      background: #3D0808;
+      padding: 8px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-bottom-strip span {
+      font-size: 8px;
+      color: rgba(255,255,255,0.3);
+      letter-spacing: 0.06em;
+    }
+
+    .footer-logo-small {
+      width: 26px;
+      height: 26px;
+      object-fit: contain;
+      opacity: 0.45;
+    }
+
+    /* ═══════════════════════════════════════════
+       PRINT STYLES
+    ═══════════════════════════════════════════ */
+    @media print {
+      body {
+        background: none;
+        padding: 0;
+        margin: 0;
+      }
+      .flyer {
+        width: 100%;
+        min-height: 100vh;
+        box-shadow: none;
+      }
+      .print-btn { display: none; }
+    }
+
+    /* ── PRINT BUTTON (screen only) ── */
+    .print-btn {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      background: var(--red);
+      color: #fff;
+      border: none;
+      padding: 12px 24px;
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 0.06em;
+      border-radius: 4px;
+      cursor: pointer;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+      transition: background 0.2s;
+    }
+    .print-btn:hover { background: #6B1212; }
+  </style>
+</head>
+<body>
+
+<div class="flyer">
+
+  <!-- ══════════════════════════════════
+       HEADER
+  ══════════════════════════════════ -->
+  <div class="header">
+    <div class="header-inner">
+      <img src="logo.jpg" alt="Ander Acupuncture Logo" class="header-logo" />
+      <div class="header-text">
+        <div class="header-label">Traditional Chinese Medicine · Orange, California</div>
+        <div class="header-clinic">Ander Acupuncture<br>and Herbs</div>
+        <div class="header-tagline">"A Place Where Women Feel Safe, Cared For, and Understood"</div>
+        <div class="header-badges">
+          <span class="badge gold">20+ Years Experience</span>
+          <span class="badge">California Licensed</span>
+          <span class="badge">DAIM · L.Ac.</span>
+          <span class="badge">English &amp; 中文</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="ribbon"></div>
+
+  <!-- ══════════════════════════════════
+       SECTION DIVIDER
+  ══════════════════════════════════ -->
+  <div class="divider">
+    <div class="divider-line"></div>
+    <span class="divider-icon">☯</span>
+    <span class="divider-text">About the Practitioner</span>
+    <div class="divider-line"></div>
+  </div>
+
+  <!-- ══════════════════════════════════
+       MAIN BODY
+  ══════════════════════════════════ -->
+  <div class="body-content">
+    <div class="main-grid">
+
+      <!-- LEFT: Doctor Card -->
+      <div class="doctor-card">
+        <img src="images/dr-li-main.jpeg" alt="Dr. He (Annie) Li" class="doctor-photo" />
+        <div class="doctor-name">Dr. He (Annie) Li</div>
+        <div class="doctor-creds">DAIM &nbsp;·&nbsp; L.Ac.</div>
+        <div class="doctor-pills">
+          <span class="pill">OB/GYN Physician (China)</span>
+          <span class="pill">Alhambra Medical Univ.</span>
+          <span class="pill">Dalian University</span>
+          <span class="pill">UCI Medical Center</span>
+          <span class="pill">M.S. Traditional Asian Med.</span>
+          <span class="pill">Doctorate in Acupuncture</span>
+        </div>
+        <div class="lang-note">
+          <strong>Consultations available in:</strong><br>
+          English &amp; Mandarin Chinese (中文)
+        </div>
+      </div>
+
+      <!-- RIGHT: Info -->
+      <div class="info-col">
+
+        <!-- Bio -->
+        <div class="section-label">Doctor of Acupuncture &amp; Integrative Medicine</div>
+        <div class="section-heading">A Unique Bridge Between<br>East &amp; West</div>
+        <div class="red-line"></div>
+        <p class="section-text">
+          Dr. He (Annie) Li brings over <strong>two decades of healthcare experience</strong> spanning both Western medicine and Traditional Chinese Medicine. After practicing for 10+ years as a physician in a leading OB/GYN hospital in China and serving as a Principal Ultrasound Technician at UCI Medical Center, she pursued advanced training in TCM — earning her Doctorate in Acupuncture and Integrative Medicine.
+          <br><br>
+          She takes the time to listen, understand your full health picture, and design a personalized treatment plan — never one-size-fits-all care.
+        </p>
+
+        <!-- Services -->
+        <div class="divider" style="padding:0;margin:0 0 10px;">
+          <div class="divider-line"></div>
+          <span class="divider-text" style="white-space:nowrap;">Conditions Treated</span>
+          <div class="divider-line"></div>
+        </div>
+
+        <div class="services-grid">
+          <div class="service-item">
+            <div class="service-dot">✦</div>
+            <span>Irregular &amp; Painful Periods</span>
+          </div>
+          <div class="service-item">
+            <div class="service-dot">✦</div>
+            <span>Infertility &amp; IVF Support</span>
+          </div>
+          <div class="service-item">
+            <div class="service-dot">✦</div>
+            <span>PCOS &amp; Hormonal Imbalance</span>
+          </div>
+          <div class="service-item">
+            <div class="service-dot">✦</div>
+            <span>Menopause &amp; Hot Flashes</span>
+          </div>
+          <div class="service-item">
+            <div class="service-dot">✦</div>
+            <span>Chronic Pain &amp; Sciatica</span>
+          </div>
+          <div class="service-item">
+            <div class="service-dot">✦</div>
+            <span>Migraines &amp; Headaches</span>
+          </div>
+          <div class="service-item">
+            <div class="service-dot">✦</div>
+            <span>Digestive Disorders</span>
+          </div>
+          <div class="service-item">
+            <div class="service-dot">✦</div>
+            <span>Insomnia &amp; Stress</span>
+          </div>
+          <div class="service-item">
+            <div class="service-dot">✦</div>
+            <span>Anemia &amp; Fatigue</span>
+          </div>
+          <div class="service-item">
+            <div class="service-dot">✦</div>
+            <span>Post COVID-19 Syndrome</span>
+          </div>
+          <div class="service-item">
+            <div class="service-dot">✦</div>
+            <span>Weight &amp; Wellness</span>
+          </div>
+          <div class="service-item">
+            <div class="service-dot">✦</div>
+            <span>Postpartum Recovery</span>
+          </div>
+        </div>
+
+        <!-- Treatment modalities -->
+        <div class="treatments-row">
+          <div class="treatments-label">Treatment Modalities</div>
+          <div class="treatments-list">
+            <span class="treatment-tag">Acupuncture</span>
+            <span class="treatment-tag">Chinese Herbal Formulas</span>
+            <span class="treatment-tag">Cupping</span>
+            <span class="treatment-tag">Moxibustion</span>
+            <span class="treatment-tag">Meridian Bodywork</span>
+            <span class="treatment-tag">Gua Sha</span>
+            <span class="treatment-tag">Medicinal Diet Guidance</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════
+       TESTIMONIAL
+  ══════════════════════════════════ -->
+  <div class="testimonial-strip">
+    <div class="t-quote-mark">"</div>
+    <div class="t-body">
+      <p class="t-text">Dr. Annie Li is a miracle worker and an angel on earth. Her breadth of knowledge coupled with her extraordinary kindness and true desire to help those suffering is unique in this world. I drive many hours from Ventura County to see her in Orange County — if a person is fortunate enough to meet just one individual like Dr. Li in their lifetime, one would be truly blessed.</p>
+      <div class="t-author">— Orly Frank, Patient <span class="t-stars">★★★★★</span></div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════
+       CONTACT
+  ══════════════════════════════════ -->
+  <div class="contact-section">
+    <div class="contact-grid">
+
+      <div class="contact-col">
+        <div class="contact-col-label">Visit Us</div>
+        <div class="contact-item">
+          <strong>Ander Acupuncture and Herbs</strong>
+          1310 W. Stewart Dr., Suite 302<br>
+          Orange, CA 92868
+        </div>
+        <div class="cta-btn">Book an Appointment</div>
+      </div>
+
+      <div class="contact-divider-v"></div>
+
+      <div class="contact-col">
+        <div class="contact-col-label">Reach Us</div>
+        <div class="contact-item" style="margin-bottom:8px;">
+          <strong>📞 &nbsp;(657) 221-0331</strong>
+        </div>
+        <div class="contact-item">
+          <strong>✉ &nbsp;annieqqpp@gmail.com</strong>
+        </div>
+      </div>
+
+      <div class="contact-divider-v"></div>
+
+      <div class="contact-col">
+        <div class="contact-col-label">Business Hours</div>
+        <div class="hours-row"><span>Monday – Friday</span><span>9:30 am – 6:00 pm</span></div>
+        <div class="hours-row"><span>Saturday</span><span>By Appointment</span></div>
+        <div class="hours-row"><span>Sunday</span><span>Closed</span></div>
+        <div style="margin-top:8px;font-size:8.5px;color:rgba(255,255,255,0.45);font-style:italic;">
+          Appointments available in English &amp; Chinese (中文)
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer-bottom-strip">
+    <span>© 2026 Ander Acupuncture and Herbs · Orange, CA · All rights reserved</span>
+    <img src="logo.jpg" alt="Logo" class="footer-logo-small" />
+    <span>For informational purposes only. Not a substitute for medical advice.</span>
+  </div>
+
+</div>
+
+<button class="print-btn" onclick="window.print()">🖨 Print / Save as PDF</button>
+
+</body>
+</html>
