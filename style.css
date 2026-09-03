@@ -67,11 +67,11 @@ nav {
 
 .nav-brand span {
   display: block;
-  font-size: 0.68rem;
-  font-weight: normal;
-  color: var(--gray);
-  font-family: Arial, sans-serif;
-  letter-spacing: 0.06em;
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--red);
+  font-family: Georgia, serif;
+  letter-spacing: 0;
 }
 
 .nav-links {
